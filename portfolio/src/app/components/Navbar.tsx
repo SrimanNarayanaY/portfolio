@@ -1,7 +1,7 @@
 export default function Navbar() {
     return (
         <header className="sticky top-0 z-20 border-b border-slate-800/70 bg-slate-950/80 backdrop-blur">
-            <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+            <nav className="mx-auto flex items-center justify-between px-4 py-3">
                 <a href="#top" className="text-lg font-semibold tracking-tight">
                     <span className="text-cyan-400">&lt;/&gt;</span> Sriman
                 </a>

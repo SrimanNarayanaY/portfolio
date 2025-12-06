@@ -9,15 +9,17 @@ import Footer from "./components/Footer";
 
 export default function Page() {
   return (
-    <main className="mx-auto max-w-6xl px-4">
+    <main className="mx-auto flex min-h-screen flex-col">
       <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Experience />
-      <Projects />
-      <Contact />
-      <Footer />
+      <div className="px-4">
+        <Hero />
+        <About />
+        <Skills />
+        <Experience />
+        <Projects />
+        <Contact />
+        <Footer />
+      </div>
     </main>
   );
 }
