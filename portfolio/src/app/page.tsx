@@ -9,9 +9,9 @@ import Footer from "./components/Footer";
 
 export default function Page() {
   return (
-    <main className="mx-auto flex min-h-screen flex-col">
+    <main className="flex min-h-screen flex-col">
       <Navbar />
-      <div className="px-4">
+      <div className="mx-auto w-full max-w-6xl px-4 pb-16 pt-6 sm:px-6 lg:px-8">
         <Hero />
         <About />
         <Skills />

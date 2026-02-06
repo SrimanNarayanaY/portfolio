@@ -13,17 +13,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="bg-slate-950 text-slate-100 font-sans">
-        {/* Background gradient */}
-        <div className="fixed inset-0 -z-10 bg-gradient-to-b from-slate-900 via-slate-950 to-black"></div>
-        <div
-          className="fixed inset-0 -z-10 opacity-30"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 0% 0%, #22d3ee55 0, transparent 55%), radial-gradient(circle at 100% 100%, #4f46e555 0, transparent 55%)",
-          }}
-        ></div>
-
+      <body className="min-h-screen text-[var(--text)]">
+        <div className="fixed inset-0 -z-20 bg-[radial-gradient(circle_at_15%_10%,rgba(245,165,36,0.18),transparent_45%),radial-gradient(circle_at_80%_15%,rgba(71,193,255,0.18),transparent_40%),radial-gradient(circle_at_70%_80%,rgba(26,36,46,0.8),transparent_55%)]"></div>
+        <div className="pointer-events-none fixed inset-0 -z-10 opacity-60">
+          <div className="absolute left-[-10%] top-16 h-72 w-72 rounded-full bg-[rgba(245,165,36,0.15)] blur-3xl float-slow"></div>
+          <div className="absolute right-[-6%] top-64 h-80 w-80 rounded-full bg-[rgba(71,193,255,0.15)] blur-3xl float-slow"></div>
+        </div>
         {children}
       </body>
     </html>
