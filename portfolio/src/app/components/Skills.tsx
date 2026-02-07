@@ -16,11 +16,18 @@ export default function Skills() {
                     },
                     {
                         title: "Frameworks",
-                        items: ["Node.js", "Express.js", "NestJS", "Hono.js", "Fastify", "Django"],
+                        items: ["Node.js", "Express.js", "NestJS", "Hono.js", "Fastify", "Django", "LangChain"],
                     },
                     {
                         title: "Databases",
-                        items: ["PostgreSQL", "MySQL", "MongoDB", "Drizzle ORM", "TypeORM"],
+                        items: [
+                            "PostgreSQL",
+                            "MySQL",
+                            "MongoDB",
+                            "Drizzle ORM",
+                            "TypeORM",
+                            "JS Vector DBs",
+                        ],
                     },
                     {
                         title: "Cloud & DevOps",
@@ -34,6 +41,7 @@ export default function Skills() {
                         title: "Concepts",
                         items: [
                             "RESTful API design, Microservices",
+                            "RAG implementation",
                             "Performance Optimization, Caching",
                             "Data Migration, Security (JWT, OAuth, RBAC)",
                             "Payment Gateway Integration, Email Automation",

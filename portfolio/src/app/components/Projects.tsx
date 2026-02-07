@@ -32,6 +32,12 @@ export default function Projects() {
                         body: "Legal case management system built with Hono.js and Drizzle ORM for rapid case workflows.",
                         stack: "Hono.js, Drizzle ORM, PostgreSQL, Socket.IO",
                     },
+                    {
+                        title: "ShipGPT",
+                        tag: "AI Assistant",
+                        body: "RAG-powered assistant for instant document answers with secure ingestion and semantic search.",
+                        stack: "Node.js, LangChain, JS Vector DB, TypeORM, PostgreSQL",
+                    },
                 ].map((project) => (
                     <article
                         key={project.title}
