@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Resume and extracted text files — never commit these
+*.pdf
+*.txt

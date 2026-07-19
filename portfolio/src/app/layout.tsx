@@ -3,7 +3,7 @@ import "./globals.css";
 export const metadata = {
   title: "Sriman Narayana Yendluri | Backend Developer",
   description:
-    "Portfolio of Sriman Narayana Yendluri, Backend Developer specializing in Node.js, NestJS, Django, PostgreSQL, MongoDB, AWS, and microservices.",
+    "Portfolio of Sriman Narayana Yendluri, Backend Developer specializing in Node.js, NestJS (NX monorepo), TypeORM, PostgreSQL, MongoDB, AWS, Utho Cloud VPS, and CI/CD.",
 };
 
 export default function RootLayout({
@@ -14,27 +14,30 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className="min-h-screen overflow-x-hidden text-[var(--text)] antialiased">
+
+        {/* Ambient gradient blobs */}
         <div
-          className="fixed inset-0 -z-30 bg-[radial-gradient(circle_at_12%_8%,rgba(245,165,36,0.2),transparent_40%),radial-gradient(circle_at_85%_12%,rgba(71,193,255,0.22),transparent_35%),radial-gradient(circle_at_70%_85%,rgba(26,36,46,0.75),transparent_55%)]"
-          aria-hidden="true"
-        ></div>
-        <div
-          className="fixed inset-0 -z-20 opacity-40 [mask-image:radial-gradient(circle_at_50%_25%,black,transparent_70%)]"
+          className="pointer-events-none fixed inset-0 -z-30 overflow-hidden"
           aria-hidden="true"
         >
-          <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.06),transparent_40%),linear-gradient(0deg,rgba(255,255,255,0.04),transparent_45%)]"></div>
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(180deg,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:64px_64px]"></div>
+          <div className="absolute -top-40 -left-40 h-[600px] w-[600px] rounded-full bg-[radial-gradient(circle,rgba(71,193,255,0.12),transparent_65%)] blur-3xl" />
+          <div className="absolute -top-20 right-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(245,165,36,0.1),transparent_65%)] blur-3xl" />
+          <div className="absolute bottom-[-10%] left-[30%] h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle,rgba(167,139,250,0.08),transparent_65%)] blur-3xl" />
         </div>
-        <div className="pointer-events-none fixed inset-0 -z-10 opacity-70" aria-hidden="true">
-          <div className="absolute left-[-10%] top-16 h-72 w-72 rounded-full bg-[rgba(245,165,36,0.15)] blur-3xl float-slow"></div>
-          <div className="absolute right-[-6%] top-64 h-80 w-80 rounded-full bg-[rgba(71,193,255,0.15)] blur-3xl float-slow"></div>
+
+        {/* Animated floating glows */}
+        <div className="pointer-events-none fixed inset-0 -z-20 opacity-60" aria-hidden="true">
+          <div className="absolute left-[-8%] top-24 h-72 w-72 rounded-full bg-[rgba(245,165,36,0.12)] blur-3xl float-slow" />
+          <div className="absolute right-[-5%] top-80 h-80 w-80 rounded-full bg-[rgba(71,193,255,0.12)] blur-3xl float-slow" style={{ animationDelay: "3s" }} />
         </div>
+
+        {/* Subtle noise texture */}
         <div
-          className="fixed inset-0 -z-10 opacity-20 mix-blend-soft-light"
+          className="pointer-events-none fixed inset-0 -z-10 opacity-[0.025] mix-blend-overlay"
+          style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")" }}
           aria-hidden="true"
-        >
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.12),transparent_45%),radial-gradient(circle_at_80%_30%,rgba(255,255,255,0.08),transparent_40%)]"></div>
-        </div>
+        />
+
         {children}
       </body>
     </html>
