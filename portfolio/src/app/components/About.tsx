@@ -1,67 +1,78 @@
+import { Settings, Cloud, Shield, Zap, Users } from "lucide-react";
+
+const stats = [
+    { label: "Experience", value: "3+ years" },
+    { label: "API Performance", value: "Up to 40% faster" },
+    { label: "Infrastructure", value: "AWS · Utho · CI/CD" },
+];
+
+const highlights = [
+    { Icon: Settings, title: "API & Database Specialist", desc: "Scalable REST APIs with optimised DB schemas and query tuning." },
+    { Icon: Cloud, title: "Cloud-Native & DevOps", desc: "AWS S3/EC2, Utho VPS, GitHub Actions CI/CD, rclone backup." },
+    { Icon: Shield, title: "Security-Focused", desc: "JWT, OAuth, RBAC, and encryption in all production apps." },
+    { Icon: Zap, title: "Payment & Real-Time", desc: "Stripe, Socket.IO live events, SendGrid/SMTP notifications." },
+    { Icon: Users, title: "Agile Collaborator", desc: "PR reviews, Bitbucket branch protection, Scrum delivery." },
+];
+
 export default function About() {
     return (
-        <section id="about" className="py-16 border-t border-[var(--border)]">
-            <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+        <section id="about" style={{ padding: "36px 0", borderTop: "1px solid #e5e7eb", backgroundColor: "#ffffff" }}>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "28px" }}>
 
-                {/* Left label */}
-                <div className="md:w-1/3">
-                    <span className="tag-badge">About</span>
-                    <h2 className="mt-4 text-2xl font-bold text-white leading-snug">
-                        Backend systems<br />
-                        <span className="text-[var(--accent)]">that stay fast.</span>
+                {/* Left */}
+                <div style={{ flex: "0 1 220px" }}>
+                    <span style={{
+                        display: "inline-block", fontSize: "10px", fontWeight: 600,
+                        textTransform: "uppercase", letterSpacing: "0.07em",
+                        border: "1px solid #e5e7eb", borderRadius: "4px",
+                        padding: "2px 9px", color: "#6b7280", backgroundColor: "#f3f4f6",
+                    }}>About</span>
+                    <h2 style={{ marginTop: "8px", fontSize: "18px", fontWeight: 700, color: "#111827" }}>
+                        Backend systems built to scale.
                     </h2>
 
-                    {/* Quick stats */}
-                    <div className="mt-6 space-y-3">
-                        {[
-                            { label: "Experience", value: "3+ years", color: "var(--accent)" },
-                            { label: "API Perf Gain", value: "Up to 40% faster", color: "var(--accent-2)" },
-                            { label: "Infra", value: "AWS · Utho · CI/CD", color: "var(--accent-3)" },
-                        ].map((item) => (
-                            <div
-                                key={item.label}
-                                className="flex items-center justify-between rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 transition-all hover:border-[var(--border-hover)]"
-                            >
-                                <p className="text-xs uppercase tracking-wider text-[var(--muted)]">{item.label}</p>
-                                <p className="text-sm font-bold" style={{ color: item.color }}>{item.value}</p>
+                    <div style={{ marginTop: "12px", display: "flex", flexDirection: "column", gap: "6px" }}>
+                        {stats.map((item) => (
+                            <div key={item.label} style={{
+                                display: "flex", justifyContent: "space-between",
+                                border: "1px solid #e5e7eb", borderRadius: "6px",
+                                backgroundColor: "#ffffff", padding: "8px 12px",
+                            }}>
+                                <p style={{ fontSize: "11px", color: "#6b7280", margin: 0 }}>{item.label}</p>
+                                <p style={{ fontSize: "11px", fontWeight: 600, color: "#111827", margin: 0 }}>{item.value}</p>
                             </div>
                         ))}
                     </div>
                 </div>
 
-                {/* Right content */}
-                <div className="md:w-2/3 space-y-6">
-                    <p className="text-sm sm:text-base text-[var(--muted)] leading-relaxed">
-                        I am a{" "}
-                        <span className="font-semibold text-white">Strategic Backend Developer</span>{" "}
-                        with 3+ years of experience in architecting and deploying scalable RESTful APIs, microservices, and cloud-native backend infrastructures. I specialize in building{" "}
-                        <span className="text-[var(--accent-2)]">robust backend systems</span>{" "}
-                        using Node.js, Express.js, NestJS (NX monorepos), Hono.js, and Django.
+                {/* Right */}
+                <div style={{ flex: "1 1 320px", display: "flex", flexDirection: "column", gap: "14px" }}>
+                    <p style={{ fontSize: "13px", color: "#374151", lineHeight: 1.65, margin: 0 }}>
+                        Backend developer with 3+ years architecting RESTful APIs, microservices, and cloud-native infrastructure. Proficient in Node.js, NestJS (NX monorepos), Hono.js, and Django.
                     </p>
-                    <p className="text-sm sm:text-base text-[var(--muted)] leading-relaxed">
-                        I possess proven expertise in database engineering (PostgreSQL, MySQL, MongoDB, TypeORM, Drizzle ORM) and cloud infrastructure (AWS S3/EC2, Utho Cloud VPS, Render, GitHub Actions CI/CD), focusing on server configuration/hardening, backup automation, and application security.
+                    <p style={{ fontSize: "13px", color: "#374151", lineHeight: 1.65, margin: 0 }}>
+                        Database expertise: PostgreSQL, MySQL, MongoDB, TypeORM, Drizzle ORM. Cloud: AWS S3/EC2, Utho VPS, Render, GitHub Actions CI/CD.
                     </p>
 
-                    {/* Why Hire Me */}
                     <div>
-                        <h3 className="mb-4 text-lg font-bold text-white">Why Hire Me?</h3>
-                        <div className="grid gap-3 sm:grid-cols-2">
-                            {[
-                                { icon: "⚙️", title: "API & Database Specialist", desc: "Proven expertise in scalable backend architecture and robust DB schema design." },
-                                { icon: "☁️", title: "Cloud-Native & DevOps", desc: "AWS S3/EC2, Utho VPS, GitHub Actions CI/CD, rclone backup automation." },
-                                { icon: "🔒", title: "Security-Focused", desc: "Detailed implementation of JWT, OAuth, RBAC, and encryption across production apps." },
-                                { icon: "⚡", title: "Payment & Real-Time Integration", desc: "Stripe payments, Socket.IO live events, SendGrid/SMTP notifications." },
-                                { icon: "🤝", title: "Proactive Collaborator", desc: "Agile/Scrum, PR reviews, Bitbucket branch protection, cross-team communication." },
-                            ].map((item) => (
-                                <div
-                                    key={item.title}
-                                    className="card-glow rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-4"
-                                >
-                                    <div className="flex items-center gap-2.5">
-                                        <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--surface-2)] text-base">{item.icon}</span>
-                                        <h4 className="text-sm font-semibold text-white">{item.title}</h4>
+                        <h3 style={{ fontSize: "12px", fontWeight: 600, color: "#111827", margin: "0 0 10px" }}>Core Competencies</h3>
+                        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "8px" }}>
+                            {highlights.map(({ Icon, title, desc }) => (
+                                <div key={title} style={{
+                                    border: "1px solid #e5e7eb", borderRadius: "8px",
+                                    backgroundColor: "#ffffff", padding: "12px",
+                                }}>
+                                    <div style={{ display: "flex", alignItems: "center", gap: "7px", marginBottom: "6px" }}>
+                                        <span style={{
+                                            display: "flex", alignItems: "center", justifyContent: "center",
+                                            width: "24px", height: "24px", borderRadius: "5px",
+                                            backgroundColor: "#eff6ff", border: "1px solid #bfdbfe", color: "#1d4ed8", flexShrink: 0,
+                                        }}>
+                                            <Icon size={12} strokeWidth={2} />
+                                        </span>
+                                        <h4 style={{ fontSize: "11px", fontWeight: 600, color: "#111827", margin: 0 }}>{title}</h4>
                                     </div>
-                                    <p className="mt-2.5 text-xs text-[var(--muted)] leading-relaxed">{item.desc}</p>
+                                    <p style={{ fontSize: "11px", color: "#6b7280", lineHeight: 1.55, margin: 0 }}>{desc}</p>
                                 </div>
                             ))}
                         </div>

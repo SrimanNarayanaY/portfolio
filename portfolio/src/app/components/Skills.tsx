@@ -1,93 +1,72 @@
+"use client";
+import { Code, Layers, Database, Cloud, Server, Wrench, BookOpen } from "lucide-react";
+
 const skillBlocks = [
-    {
-        icon: "💻",
-        title: "Programming Languages",
-        color: "var(--accent)",
-        items: ["JavaScript", "TypeScript", "Python"],
-    },
-    {
-        icon: "🚀",
-        title: "Frameworks",
-        color: "var(--accent-2)",
-        items: ["Node.js", "Express.js", "NestJS (NX Monorepo)", "Hono.js", "Django"],
-    },
-    {
-        icon: "🗄️",
-        title: "Databases",
-        color: "var(--accent-3)",
-        items: ["PostgreSQL", "MySQL", "MongoDB", "TypeORM", "Drizzle ORM"],
-    },
-    {
-        icon: "☁️",
-        title: "Cloud & DevOps",
-        color: "var(--accent-2)",
-        items: ["AWS S3", "AWS EC2", "GitHub Actions CI/CD", "Automated Pipelines"],
-    },
-    {
-        icon: "🖥️",
-        title: "Server & Infrastructure",
-        color: "var(--accent)",
-        items: ["Utho Cloud VPS", "Render", "SSH / Server Hardening", "Backup Architecture (rclone)"],
-    },
-    {
-        icon: "🛠️",
-        title: "Tools & Platforms",
-        color: "var(--accent-3)",
-        items: ["Git", "GitHub", "Bitbucket", "Postman", "rclone"],
-    },
-    {
-        icon: "🧠",
-        title: "Concepts",
-        color: "var(--accent)",
-        items: [
-            "RESTful API Design, Microservices",
-            "Performance Optimization",
-            "Data Migration & Schema Design",
-            "Security — JWT, OAuth, RBAC",
-            "Payment Gateways & Email Automation",
-            "Real-Time Events (Socket.IO)",
-            "Agile / Scrum, Code Review",
-        ],
-    },
+    { Icon: Code,     title: "Languages",            items: ["JavaScript", "TypeScript", "Python"] },
+    { Icon: Layers,   title: "Frameworks",            items: ["Node.js", "Express.js", "NestJS (NX Monorepo)", "Hono.js", "Django"] },
+    { Icon: Database, title: "Databases",             items: ["PostgreSQL", "MySQL", "MongoDB", "TypeORM", "Drizzle ORM"] },
+    { Icon: Cloud,    title: "Cloud & DevOps",        items: ["AWS S3", "AWS EC2", "GitHub Actions CI/CD", "Automated Pipelines"] },
+    { Icon: Server,   title: "Server & Infra",        items: ["Utho Cloud VPS", "Render", "SSH / Hardening", "Backup (rclone)"] },
+    { Icon: Wrench,   title: "Tools",                 items: ["Git", "GitHub", "Bitbucket", "Postman", "rclone"] },
+    { Icon: BookOpen, title: "Concepts",              items: ["REST API Design", "Microservices", "Performance Optimisation", "JWT · OAuth · RBAC", "Payment Gateways", "Socket.IO", "Agile / Scrum"] },
 ];
 
 export default function Skills() {
     return (
-        <section id="skills" className="py-16 border-t border-[var(--border)]">
-            <div className="flex items-end justify-between gap-4">
-                <div>
-                    <span className="tag-badge">Tooling</span>
-                    <h2 className="mt-3 text-2xl font-bold text-white">Skills & Stack</h2>
-                </div>
-                <span className="hidden rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1 text-xs text-[var(--muted)] sm:inline">
-                    Backend-first
-                </span>
+        <section id="skills" style={{ padding: "36px 0", borderTop: "1px solid #e5e7eb", backgroundColor: "#ffffff" }}>
+            <div style={{ marginBottom: "16px" }}>
+                <span style={{
+                    display: "inline-block", fontSize: "10px", fontWeight: 600,
+                    textTransform: "uppercase", letterSpacing: "0.07em",
+                    border: "1px solid #e5e7eb", borderRadius: "4px",
+                    padding: "2px 9px", color: "#6b7280", backgroundColor: "#f3f4f6",
+                }}>Tooling</span>
+                <h2 style={{ marginTop: "6px", fontSize: "18px", fontWeight: 700, color: "#111827", margin: "6px 0 0" }}>Skills &amp; Stack</h2>
             </div>
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {skillBlocks.map((block) => (
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(210px, 1fr))", gap: "10px" }}>
+                {skillBlocks.map(({ Icon, title, items }) => (
                     <div
-                        key={block.title}
-                        className="card-glow group relative overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-lg shadow-black/30"
+                        key={title}
+                        style={{
+                            border: "1px solid #e5e7eb", borderRadius: "8px",
+                            backgroundColor: "#ffffff", padding: "12px",
+                            transition: "box-shadow 0.2s, border-color 0.2s",
+                        }}
+                        onMouseEnter={e => {
+                            (e.currentTarget as HTMLDivElement).style.boxShadow = "0 4px 14px rgba(29,78,216,0.09)";
+                            (e.currentTarget as HTMLDivElement).style.borderColor = "#93c5fd";
+                        }}
+                        onMouseLeave={e => {
+                            (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
+                            (e.currentTarget as HTMLDivElement).style.borderColor = "#e5e7eb";
+                        }}
                     >
-                        {/* Glow accent top-right */}
-                        <div
-                            className="pointer-events-none absolute right-[-20%] top-[-30%] h-24 w-24 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
-                            style={{ background: block.color }}
-                        />
-                        <div className="relative">
-                            <div className="mb-3 flex items-center gap-2.5">
-                                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--surface-2)] text-base">{block.icon}</span>
-                                <h3 className="text-sm font-semibold text-white">{block.title}</h3>
-                            </div>
-                            <ul className="space-y-1.5">
-                                {block.items.map((item) => (
-                                    <li key={item} className="flex items-start gap-2 text-xs text-[var(--muted)]">
-                                        <span className="mt-0.5 h-1.5 w-1.5 flex-shrink-0 rounded-full" style={{ background: block.color }} />
-                                        {item}
-                                    </li>
-                                ))}
-                            </ul>
+                        {/* Icon + title */}
+                        <div style={{ display: "flex", alignItems: "center", gap: "7px", marginBottom: "10px" }}>
+                            <span style={{
+                                display: "flex", alignItems: "center", justifyContent: "center",
+                                width: "26px", height: "26px", borderRadius: "5px",
+                                backgroundColor: "#eff6ff", border: "1px solid #bfdbfe",
+                                color: "#1d4ed8", flexShrink: 0,
+                            }}>
+                                <Icon size={12} strokeWidth={2} />
+                            </span>
+                            <h3 style={{ fontSize: "12px", fontWeight: 600, color: "#111827", margin: 0 }}>{title}</h3>
+                        </div>
+
+                        {/* Highlighted pills */}
+                        <div style={{ display: "flex", flexWrap: "wrap", gap: "5px" }}>
+                            {items.map((item) => (
+                                <span key={item} style={{
+                                    fontSize: "10px", fontWeight: 500,
+                                    color: "#1e40af", backgroundColor: "#eff6ff",
+                                    border: "1px solid #bfdbfe", borderRadius: "4px",
+                                    padding: "2px 7px",
+                                }}>
+                                    {item}
+                                </span>
+                            ))}
                         </div>
                     </div>
                 ))}

@@ -1,123 +1,107 @@
+import { Briefcase, GraduationCap, Award, CheckCircle2 } from "lucide-react";
+
 const jobs = [
     {
         role: "Backend Developer",
         company: "Digixito Media Private Limited",
         period: "Sep 2025 – Present",
-        accent: "var(--accent)",
         badge: "Current",
         bullets: [
-            "Architected and maintained backend services for multiple production projects on an NX monorepo (NestJS, TypeScript, TypeORM), enabling shared code reuse across apps and faster feature rollout.",
-            "Set up and enforced Git branch protection and PR-based review workflows on Bitbucket Cloud, blocking direct pushes to master for junior developers.",
-            "Provisioned and managed backend infrastructure on AWS EC2 and Utho Cloud VPS, including SSH access setup, server hardening, and MySQL/PostgreSQL configuration on resource-constrained servers.",
-            "Built GitHub Actions CI/CD pipelines for NestJS NX monorepo projects, automating build and deployment to Utho VPS across five live apps (BHK project).",
-            "Designed and shipped an automated multi-database backup service (PostgreSQL, MySQL, Supabase) syncing to Google Drive via rclone, with pipeline failure handling.",
-            "Reviewed pull requests from junior developers, enforcing coding standards and catching schema/data-integrity issues before merge to master.",
+            "Architected NX monorepo backend services (NestJS, TypeScript, TypeORM) with shared code reuse across multiple production apps.",
+            "Enforced Git branch protection and PR review workflows on Bitbucket Cloud.",
+            "Provisioned AWS EC2 and Utho Cloud VPS — SSH access, server hardening, MySQL/PostgreSQL configuration.",
+            "Built GitHub Actions CI/CD pipelines deploying to Utho VPS across five live apps.",
+            "Designed automated multi-database backup service (PG, MySQL, Supabase) synced to Google Drive via rclone.",
         ],
     },
     {
         role: "Backend Developer",
         company: "Orotron Software Pvt Ltd",
         period: "Oct 2022 – Jul 2025",
-        accent: "var(--accent-2)",
         badge: "3 yrs",
         bullets: [
-            "Built and shipped RESTful APIs and microservices across Node.js, Express.js, NestJS, and Hono.js for client projects spanning recruitment, legal case management, and ship-tracking domains.",
-            "Designed MongoDB and Drizzle ORM schemas for relational data models, handling migrations and query optimization for production workloads.",
-            "Integrated third-party services including payment gateways (Stripe), SendGrid/SMTP-based email notifications, and AWS S3 for file storage and asset handling.",
-            "Deployed and maintained applications on AWS EC2/S3, setting up CI/CD pipelines for automated builds and releases.",
-            "Built real-time features using Socket.IO for live event streams (e.g. lawyer-client interactions in a legal case management platform).",
-            "Implemented JWT/OAuth-based authentication and role-based access control (RBAC) across client-facing applications.",
+            "Built RESTful APIs and microservices in Node.js, Express.js, NestJS, and Hono.js for recruitment, legal, and ship-tracking domains.",
+            "Designed MongoDB and Drizzle ORM schemas; handled migrations and query optimisation for production workloads.",
+            "Integrated Stripe payments, SendGrid/SMTP email, and AWS S3 file storage.",
+            "Implemented JWT/OAuth authentication and RBAC; built Socket.IO real-time features.",
         ],
     },
 ];
 
+const achievements = [
+    "Top-Rated Backend Developer on GitHub",
+    "Optimised database performance — up to 50% faster response",
+    "Recognised for open source contributions and API design",
+];
+
 export default function Experience() {
     return (
-        <section id="experience" className="py-16 border-t border-[var(--border)]">
-            <div className="flex items-end justify-between gap-4">
-                <div>
-                    <span className="tag-badge">Timeline</span>
-                    <h2 className="mt-3 text-2xl font-bold text-white">Work Experience</h2>
-                </div>
+        <section id="experience" style={{ padding: "36px 0", borderTop: "1px solid #e5e7eb", backgroundColor: "#ffffff" }}>
+            <div style={{ marginBottom: "16px" }}>
+                <span style={{
+                    display: "inline-block", fontSize: "10px", fontWeight: 600,
+                    textTransform: "uppercase", letterSpacing: "0.07em",
+                    border: "1px solid #e5e7eb", borderRadius: "4px",
+                    padding: "2px 9px", color: "#6b7280", backgroundColor: "#f3f4f6",
+                }}>Timeline</span>
+                <h2 style={{ marginTop: "6px", fontSize: "18px", fontWeight: 700, color: "#111827" }}>Work Experience</h2>
             </div>
 
-            <div className="mt-8 space-y-6">
+            <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                 {jobs.map((job) => (
-                    <div
-                        key={job.company}
-                        className="card-glow group relative overflow-hidden rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-xl shadow-black/40"
-                    >
-                        {/* Glow */}
-                        <div
-                            className="pointer-events-none absolute right-[-15%] top-[-25%] h-40 w-40 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100"
-                            style={{ background: `color-mix(in srgb, ${job.accent} 25%, transparent)` }}
-                        />
-
-                        <div className="relative">
-                            {/* Header */}
-                            <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
-                                <div className="flex items-start gap-3">
-                                    <div
-                                        className="mt-1 h-3 w-3 flex-shrink-0 rounded-full shadow-md"
-                                        style={{ background: job.accent, boxShadow: `0 0 10px 3px color-mix(in srgb, ${job.accent} 40%, transparent)` }}
-                                    />
-                                    <div>
-                                        <div className="flex items-center gap-2">
-                                            <h3 className="text-lg font-bold text-white">{job.role}</h3>
-                                            <span
-                                                className="rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide"
-                                                style={{ color: job.accent, background: `color-mix(in srgb, ${job.accent} 12%, transparent)`, border: `1px solid color-mix(in srgb, ${job.accent} 30%, transparent)` }}
-                                            >
-                                                {job.badge}
-                                            </span>
-                                        </div>
-                                        <p className="text-sm font-medium" style={{ color: job.accent }}>{job.company}</p>
+                    <div key={job.company} style={{
+                        border: "1px solid #e5e7eb", borderRadius: "8px",
+                        backgroundColor: "#ffffff", padding: "16px",
+                    }}>
+                        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: "6px", marginBottom: "10px" }}>
+                            <div style={{ display: "flex", alignItems: "flex-start", gap: "8px" }}>
+                                <Briefcase size={14} color="#1d4ed8" style={{ marginTop: "2px", flexShrink: 0 }} />
+                                <div>
+                                    <div style={{ display: "flex", alignItems: "center", gap: "7px" }}>
+                                        <h3 style={{ fontSize: "13px", fontWeight: 600, color: "#111827", margin: 0 }}>{job.role}</h3>
+                                        <span style={{
+                                            fontSize: "9px", fontWeight: 600, textTransform: "uppercase",
+                                            border: "1px solid #bfdbfe", backgroundColor: "#eff6ff",
+                                            color: "#1e40af", borderRadius: "4px", padding: "1px 5px",
+                                        }}>{job.badge}</span>
                                     </div>
+                                    <p style={{ fontSize: "11px", fontWeight: 500, color: "#1d4ed8", margin: "2px 0 0" }}>{job.company}</p>
                                 </div>
-                                <span className="ml-6 text-xs font-medium text-[var(--muted)] sm:ml-0 sm:text-right">{job.period}</span>
                             </div>
-
-                            {/* Bullets */}
-                            <ul className="mt-5 space-y-2.5 pl-6">
-                                {job.bullets.map((b) => (
-                                    <li key={b} className="relative text-sm text-[var(--muted)] leading-relaxed">
-                                        <span
-                                            className="absolute -left-4 top-2 h-1 w-1 rounded-full"
-                                            style={{ background: job.accent }}
-                                        />
-                                        {b}
-                                    </li>
-                                ))}
-                            </ul>
+                            <span style={{ fontSize: "11px", color: "#9ca3af" }}>{job.period}</span>
                         </div>
+
+                        <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: "6px" }}>
+                            {job.bullets.map((b) => (
+                                <li key={b} style={{ display: "flex", alignItems: "flex-start", gap: "7px" }}>
+                                    <CheckCircle2 size={11} color="#9ca3af" style={{ marginTop: "2px", flexShrink: 0 }} />
+                                    <span style={{ fontSize: "12px", color: "#374151", lineHeight: 1.55 }}>{b}</span>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                 ))}
 
-                {/* Education & Achievements side-by-side */}
-                <div className="grid gap-5 sm:grid-cols-2">
-                    <div className="card-glow rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-xl shadow-black/30">
-                        <div className="flex items-center gap-2.5 mb-3">
-                            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--surface-2)] text-base">🎓</span>
-                            <h3 className="text-base font-bold text-white">Education</h3>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "10px" }}>
+                    <div style={{ border: "1px solid #e5e7eb", borderRadius: "8px", backgroundColor: "#ffffff", padding: "14px" }}>
+                        <div style={{ display: "flex", alignItems: "center", gap: "7px", marginBottom: "8px" }}>
+                            <GraduationCap size={14} color="#1d4ed8" />
+                            <h3 style={{ fontSize: "12px", fontWeight: 600, color: "#111827", margin: 0 }}>Education</h3>
                         </div>
-                        <p className="text-sm font-medium text-white">B.Tech – Electronics & Communication Engineering</p>
-                        <p className="mt-1 text-xs text-[var(--muted)]">Narayana Engineering College, Nellore, Andhra Pradesh · 2022</p>
+                        <p style={{ fontSize: "12px", fontWeight: 500, color: "#111827", margin: 0 }}>B.Tech – Electronics &amp; Communication Engineering</p>
+                        <p style={{ fontSize: "11px", color: "#6b7280", margin: "3px 0 0" }}>Narayana Engineering College, Nellore · 2022</p>
                     </div>
 
-                    <div className="card-glow rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-xl shadow-black/30">
-                        <div className="flex items-center gap-2.5 mb-3">
-                            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--surface-2)] text-base">🏆</span>
-                            <h3 className="text-base font-bold text-white">Achievements</h3>
+                    <div style={{ border: "1px solid #e5e7eb", borderRadius: "8px", backgroundColor: "#ffffff", padding: "14px" }}>
+                        <div style={{ display: "flex", alignItems: "center", gap: "7px", marginBottom: "8px" }}>
+                            <Award size={14} color="#1d4ed8" />
+                            <h3 style={{ fontSize: "12px", fontWeight: 600, color: "#111827", margin: 0 }}>Achievements</h3>
                         </div>
-                        <ul className="space-y-2 text-xs text-[var(--muted)]">
-                            {[
-                                "Top-Rated Backend Developer on GitHub",
-                                "Optimized DB performance — up to 50% faster application speed",
-                                "Awarded for open source contributions and innovative API design",
-                            ].map((a) => (
-                                <li key={a} className="flex items-start gap-2">
-                                    <span className="mt-0.5 text-[var(--accent)]">✦</span>
-                                    {a}
+                        <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: "6px" }}>
+                            {achievements.map((a) => (
+                                <li key={a} style={{ display: "flex", alignItems: "flex-start", gap: "6px" }}>
+                                    <CheckCircle2 size={11} color="#9ca3af" style={{ marginTop: "2px", flexShrink: 0 }} />
+                                    <span style={{ fontSize: "11px", color: "#374151" }}>{a}</span>
                                 </li>
                             ))}
                         </ul>

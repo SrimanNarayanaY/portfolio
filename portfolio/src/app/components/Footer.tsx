@@ -1,18 +1,15 @@
 export default function Footer() {
     return (
-        <footer className="border-t border-[var(--border)] py-10">
-            <div className="flex flex-col items-center gap-3 text-center">
-                <div className="flex items-center gap-2">
-                    <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[var(--surface)] text-[var(--accent)] text-xs font-mono font-bold shadow shadow-black/40">
-                        {"</>"}
-                    </span>
-                    <span className="text-sm font-semibold text-white">Sriman Narayana Yendluri</span>
-                </div>
-                <p className="text-xs text-[var(--muted)]">
+        <footer style={{ borderTop: "1px solid #e5e7eb", padding: "28px 0", backgroundColor: "#ffffff" }}>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "6px", textAlign: "center" }}>
+                <span style={{ fontSize: "14px", fontWeight: 700, color: "#111827", letterSpacing: "-0.01em" }}>
+                    Sriman Narayana Yendluri
+                </span>
+                <p style={{ fontSize: "12px", color: "#6b7280", margin: 0 }}>
                     Backend Developer · Node.js · NestJS · AWS · CI/CD
                 </p>
-                <p className="text-xs text-[var(--muted-2)]">
-                    © {new Date().getFullYear()} Sriman Narayana Yendluri. Built for clean backend architecture.
+                <p style={{ fontSize: "11px", color: "#9ca3af", margin: 0 }}>
+                    © {new Date().getFullYear()} Sriman Narayana Yendluri
                 </p>
             </div>
         </footer>

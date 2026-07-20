@@ -9,9 +9,9 @@ import Footer from "./components/Footer";
 
 export default function Page() {
   return (
-    <main className="flex min-h-screen flex-col">
+    <main style={{ backgroundColor: "#ffffff", minHeight: "100vh", display: "flex", flexDirection: "column" }}>
       <Navbar />
-      <div className="mx-auto w-full max-w-6xl px-4 pb-16 pt-6 sm:px-6 lg:px-8">
+      <div style={{ maxWidth: "1024px", margin: "0 auto", width: "100%", padding: "0 24px 64px" }}>
         <Hero />
         <About />
         <Skills />
@@ -23,6 +23,7 @@ export default function Page() {
     </main>
   );
 }
+
 
 
 

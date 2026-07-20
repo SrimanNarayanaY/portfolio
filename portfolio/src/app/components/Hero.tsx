@@ -1,126 +1,131 @@
+import { MapPin, Mail, Link2 } from "lucide-react";
+
+const snapshot = [
+    { label: "Stack", val: "Node.js · NestJS · TypeScript" },
+    { label: "Cloud", val: "AWS · Utho VPS · CI/CD" },
+    { label: "DB", val: "PostgreSQL · MySQL · MongoDB" },
+    { label: "Focus", val: "Monorepos · Security · Backup" },
+];
+
+const stats = [
+    { val: "3+", label: "Yrs Exp" },
+    { val: "40%", label: "API Gain" },
+    { val: "6+", label: "Projects" },
+    { val: "2", label: "Companies" },
+];
+
 export default function Hero() {
     return (
-        <section
-            id="top"
-            className="relative flex min-h-[90vh] flex-col justify-center gap-12 py-20 md:flex-row md:items-center md:justify-between"
-        >
-            {/* Left: Text */}
-            <div className="space-y-7 md:w-3/5">
-
-                {/* Badge */}
-                <div className="fade-up inline-flex items-center gap-2 rounded-full border border-[var(--accent)]/25 bg-[var(--accent)]/8 px-4 py-1.5">
-                    <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[var(--green)]" />
-                    <span className="text-[11px] font-semibold uppercase tracking-widest text-[var(--accent)]">
-                        Open to Backend & Platform Roles
-                    </span>
-                </div>
+        <section id="top" style={{
+            display: "flex", alignItems: "center", justifyContent: "space-between",
+            gap: "40px", padding: "48px 0 40px",
+            backgroundColor: "#ffffff",
+            flexWrap: "wrap",
+        }}>
+            {/* ── Left ─────────────────── */}
+            <div style={{ flex: "1 1 340px", display: "flex", flexDirection: "column", gap: "16px", minWidth: 0 }}>
 
                 {/* Headline */}
-                <div className="fade-up fade-up-delay-1">
-                    <h1 className="text-4xl font-bold leading-[1.1] text-white sm:text-5xl lg:text-6xl">
-                        Building{" "}
-                        <span className="shimmer-text">reliable</span>
-                        <br />
-                        <span className="text-white">backend platforms</span>
-                        <br />
-                        <span className="text-[var(--muted)] text-3xl sm:text-4xl lg:text-5xl font-semibold">
-                            for modern products.
-                        </span>
-                    </h1>
-                    <p className="mt-5 text-sm text-[var(--muted)] sm:text-base">
-                        Sriman Narayana Yendluri
-                        <span className="mx-2 text-[var(--accent)]">·</span>
+                <div>
+                    <p style={{ fontSize: "12px", color: "#9ca3af", margin: "0 0 6px", textTransform: "uppercase", letterSpacing: "0.06em" }}>
                         Backend Developer
-                        <span className="mx-2 text-[var(--accent)]">·</span>
+                    </p>
+                    <h1 style={{ fontSize: "clamp(26px, 4vw, 38px)", fontWeight: 700, color: "#111827", margin: "0 0 4px", lineHeight: 1.15 }}>
+                        Sriman Narayana<br />Yendluri
+                    </h1>
+                    <p style={{ fontSize: "13px", color: "#6b7280", margin: "8px 0 0" }}>
                         Node.js · NestJS · TypeScript · AWS · CI/CD
                     </p>
                 </div>
 
                 {/* Summary */}
-                <p className="fade-up fade-up-delay-2 max-w-xl text-sm text-[var(--muted)] sm:text-base leading-relaxed accent-line">
-                    Strategic backend engineer with <strong className="text-white">3+ years</strong> of experience designing scalable APIs, optimizing databases, managing NX monorepos, and deploying secure microservices to AWS and Utho VPS.
+                <p style={{
+                    fontSize: "13px", color: "#374151", lineHeight: 1.7,
+                    borderLeft: "3px solid #1d4ed8", paddingLeft: "12px", margin: 0,
+                    maxWidth: "420px",
+                }}>
+                    3+ years designing scalable APIs, optimising databases, and deploying secure microservices on AWS and Utho VPS using NX monorepo architecture.
                 </p>
 
                 {/* CTAs */}
-                <div className="fade-up fade-up-delay-3 flex flex-wrap items-center gap-3">
-                    <a
-                        href="mailto:sriman793@gmail.com"
-                        id="hero-start-project-btn"
-                        className="inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-6 py-2.5 text-sm font-bold text-black shadow-lg shadow-[rgba(245,165,36,0.4)] transition-all hover:scale-105 hover:shadow-[0_0_28px_8px_rgba(245,165,36,0.45)]"
-                    >
-                        Start a Project →
+                <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "8px" }}>
+                    <a href="mailto:sriman793@gmail.com" id="hero-contact-btn" style={{
+                        display: "inline-flex", alignItems: "center", gap: "5px",
+                        backgroundColor: "#1d4ed8", color: "#fff",
+                        borderRadius: "6px", padding: "8px 16px",
+                        fontSize: "12px", fontWeight: 600, textDecoration: "none",
+                    }}>
+                        <Mail size={12} /> Contact Me
                     </a>
-                    <a
-                        href="https://linkedin.com/in/sriman-narayana-yendluri-14b34022a"
-                        target="_blank"
-                        id="hero-linkedin-btn"
-                        className="inline-flex items-center gap-2 rounded-full border border-[var(--border-hover)] bg-[var(--surface)] px-5 py-2.5 text-sm font-medium text-white/80 transition-all hover:border-[var(--accent-2)]/50 hover:bg-[var(--surface-2)] hover:text-white"
-                    >
-                        LinkedIn ↗
+                    <a href="https://linkedin.com/in/sriman-narayana-yendluri-14b34022a" target="_blank" id="hero-linkedin-btn" style={{
+                        display: "inline-flex", alignItems: "center", gap: "5px",
+                        border: "1px solid #e5e7eb", backgroundColor: "#fff", color: "#374151",
+                        borderRadius: "6px", padding: "8px 16px",
+                        fontSize: "12px", fontWeight: 500, textDecoration: "none",
+                    }}>
+                        <Link2 size={12} /> LinkedIn
                     </a>
-                    <span className="text-xs text-[var(--muted)]">India · +91 74168 99743</span>
+                    <span style={{ display: "flex", alignItems: "center", gap: "3px", fontSize: "11px", color: "#9ca3af" }}>
+                        <MapPin size={11} /> India · +91 74168 99743
+                    </span>
                 </div>
 
-                {/* Stats row */}
-                <div className="fade-up fade-up-delay-3 flex flex-wrap gap-5 pt-2">
-                    {[
-                        { val: "3+", label: "Years Experience" },
-                        { val: "40%", label: "API Perf Gain" },
-                        { val: "6+", label: "Live Projects" },
-                        { val: "2", label: "Companies" },
-                    ].map((s) => (
+                {/* Stats */}
+                <div style={{
+                    display: "flex", gap: "24px",
+                    paddingTop: "14px", borderTop: "1px solid #e5e7eb",
+                }}>
+                    {stats.map((s) => (
                         <div key={s.label}>
-                            <p className="text-xl font-bold text-white">{s.val}</p>
-                            <p className="text-[11px] uppercase tracking-wider text-[var(--muted)]">{s.label}</p>
+                            <p style={{ fontSize: "17px", fontWeight: 700, color: "#111827", margin: 0 }}>{s.val}</p>
+                            <p style={{ fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.05em", color: "#9ca3af", margin: 0 }}>{s.label}</p>
                         </div>
                     ))}
                 </div>
             </div>
 
-            {/* Right: Snapshot card */}
-            <div className="mt-6 md:mt-0 md:w-2/5">
-                <div className="gradient-border relative overflow-hidden rounded-3xl bg-[var(--surface)] p-6 shadow-2xl shadow-black/60">
-                    {/* Glow blobs inside card */}
-                    <div className="pointer-events-none absolute right-[-20%] top-[-30%] h-48 w-48 rounded-full bg-[var(--accent)]/15 blur-3xl" />
-                    <div className="pointer-events-none absolute bottom-[-20%] left-[-10%] h-36 w-36 rounded-full bg-[var(--accent-2)]/12 blur-3xl" />
+            {/* ── Right: Snapshot card ─────── */}
+            <div style={{ flex: "0 0 290px", maxWidth: "290px" }}>
+                <div style={{
+                    border: "1px solid #e5e7eb", borderRadius: "10px",
+                    backgroundColor: "#ffffff", padding: "16px",
+                    boxShadow: "0 1px 6px rgba(0,0,0,0.05)",
+                }}>
+                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "12px" }}>
+                        <p style={{ fontSize: "12px", fontWeight: 600, color: "#111827", margin: 0 }}>Backend Snapshot</p>
+                        <span style={{
+                            display: "inline-flex", alignItems: "center", gap: "4px",
+                            border: "1px solid #bbf7d0", backgroundColor: "#f0fdf4",
+                            borderRadius: "99px", padding: "2px 8px",
+                            fontSize: "10px", fontWeight: 500, color: "#16a34a",
+                        }}>
+                            <span style={{ width: "5px", height: "5px", borderRadius: "50%", backgroundColor: "#22c55e" }} />
+                            Available
+                        </span>
+                    </div>
 
-                    <div className="relative">
-                        <div className="mb-5 flex items-center justify-between">
-                            <div>
-                                <p className="text-xs font-semibold uppercase tracking-widest text-[var(--muted)]">Backend Snapshot</p>
-                                <p className="mt-0.5 text-base font-bold text-white">Sriman Narayana</p>
+                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6px", marginBottom: "10px" }}>
+                        {snapshot.map((item) => (
+                            <div key={item.label} style={{
+                                border: "1px solid #e5e7eb", borderRadius: "6px",
+                                backgroundColor: "#f9fafb", padding: "8px",
+                            }}>
+                                <p style={{ fontSize: "9px", textTransform: "uppercase", letterSpacing: "0.06em", color: "#9ca3af", margin: 0 }}>{item.label}</p>
+                                <p style={{ fontSize: "10px", fontWeight: 600, color: "#111827", margin: "3px 0 0", lineHeight: 1.35 }}>{item.val}</p>
                             </div>
-                            <span className="flex items-center gap-1.5 rounded-full bg-[var(--green)]/10 px-3 py-1 text-xs font-semibold text-[var(--green)] border border-[var(--green)]/20">
-                                <span className="h-1.5 w-1.5 rounded-full bg-[var(--green)] animate-pulse" />
-                                Available
+                        ))}
+                    </div>
+
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: "5px" }}>
+                        {["NestJS", "NX Monorepo", "TypeORM", "GitHub Actions", "AWS EC2", "rclone"].map((t) => (
+                            <span key={t} style={{
+                                border: "1px solid #bfdbfe", backgroundColor: "#eff6ff",
+                                borderRadius: "4px", padding: "2px 7px",
+                                fontSize: "10px", fontWeight: 500, color: "#1e40af",
+                            }}>
+                                {t}
                             </span>
-                        </div>
-
-                        <div className="grid grid-cols-2 gap-3">
-                            {[
-                                { label: "Primary Stack", val: "Node.js · NestJS · TypeScript" },
-                                { label: "Cloud & Infra", val: "AWS · Utho VPS · CI/CD" },
-                                { label: "Databases", val: "PG · MySQL · Mongo · TypeORM" },
-                                { label: "Speciality", val: "Monorepos · Backup · Security" },
-                            ].map((item) => (
-                                <div key={item.label} className="rounded-xl bg-[var(--surface-2)] p-3 border border-[var(--border)]">
-                                    <p className="text-[10px] uppercase tracking-wider text-[var(--muted)]">{item.label}</p>
-                                    <p className="mt-1 text-xs font-semibold text-white leading-snug">{item.val}</p>
-                                </div>
-                            ))}
-                        </div>
-
-                        {/* Tech pills */}
-                        <div className="mt-4 flex flex-wrap gap-1.5">
-                            {["NestJS", "NX Monorepo", "TypeORM", "GitHub Actions", "AWS EC2", "rclone"].map((t) => (
-                                <span
-                                    key={t}
-                                    className="rounded-full bg-[var(--surface-3)] border border-[var(--border)] px-2.5 py-0.5 text-[10px] font-medium text-[var(--muted)]"
-                                >
-                                    {t}
-                                </span>
-                            ))}
-                        </div>
+                        ))}
                     </div>
                 </div>
             </div>

@@ -1,65 +1,59 @@
+import { Mail, Link2, Phone } from "lucide-react";
+
+const contacts = [
+    { label: "Email", value: "sriman793@gmail.com", href: "mailto:sriman793@gmail.com", Icon: Mail },
+    { label: "LinkedIn", value: "sriman-narayana-yendluri", href: "https://linkedin.com/in/sriman-narayana-yendluri-14b34022a", Icon: Link2 },
+    { label: "Phone", value: "+91 74168 99743", href: "tel:+917416899743", Icon: Phone },
+];
+
 export default function Contact() {
     return (
-        <section id="contact" className="py-16 border-t border-[var(--border)]">
-            <div className="gradient-border relative overflow-hidden rounded-3xl bg-[var(--surface)] p-8 shadow-2xl shadow-black/50">
-                {/* Blob */}
-                <div className="pointer-events-none absolute right-[-10%] top-[-20%] h-64 w-64 rounded-full bg-[rgba(245,165,36,0.12)] blur-3xl" />
-                <div className="pointer-events-none absolute bottom-[-15%] left-[-5%] h-48 w-48 rounded-full bg-[rgba(71,193,255,0.1)] blur-3xl" />
-
-                <div className="relative flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+        <section id="contact" style={{ padding: "36px 0", borderTop: "1px solid #e5e7eb", backgroundColor: "#ffffff" }}>
+            <div style={{ border: "1px solid #e5e7eb", borderRadius: "10px", backgroundColor: "#ffffff", padding: "20px" }}>
+                <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "16px" }}>
                     <div>
-                        <span className="tag-badge">Contact</span>
-                        <h2 className="mt-3 text-2xl font-bold text-white leading-snug">
-                            Let's build something<br />
-                            <span className="text-[var(--accent)]">resilient.</span>
+                        <span style={{
+                            display: "inline-block", fontSize: "10px", fontWeight: 600,
+                            textTransform: "uppercase", letterSpacing: "0.07em",
+                            border: "1px solid #e5e7eb", borderRadius: "4px",
+                            padding: "2px 9px", color: "#6b7280", backgroundColor: "#f3f4f6",
+                        }}>Contact</span>
+                        <h2 style={{ marginTop: "8px", fontSize: "18px", fontWeight: 700, color: "#111827" }}>
+                            Let's build something resilient.
                         </h2>
-                        <p className="mt-3 max-w-sm text-sm text-[var(--muted)] leading-relaxed">
-                            If you need a backend engineer to design scalable APIs, optimize database performance, or deliver secure microservices — let's talk.
+                        <p style={{ marginTop: "5px", maxWidth: "360px", fontSize: "12px", color: "#6b7280", lineHeight: 1.6 }}>
+                            Available for backend engineering roles — API design, database optimisation, and secure microservice delivery.
                         </p>
                     </div>
-                    <a
-                        href="mailto:sriman793@gmail.com"
-                        id="contact-schedule-btn"
-                        className="inline-flex flex-shrink-0 items-center gap-2 rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-bold text-black shadow-lg shadow-[rgba(245,165,36,0.4)] transition-all hover:scale-105 hover:shadow-[0_0_28px_10px_rgba(245,165,36,0.45)]"
-                    >
-                        Schedule a call →
+                    <a href="mailto:sriman793@gmail.com" style={{
+                        display: "inline-flex", alignItems: "center", gap: "6px",
+                        backgroundColor: "#1d4ed8", color: "#ffffff",
+                        borderRadius: "6px", padding: "9px 18px",
+                        fontSize: "12px", fontWeight: 600, textDecoration: "none", flexShrink: 0,
+                    }}>
+                        <Mail size={12} /> Get in Touch
                     </a>
                 </div>
 
-                {/* Contact details */}
-                <div className="relative mt-8 grid gap-4 sm:grid-cols-3">
-                    {[
-                        {
-                            label: "Email",
-                            value: "sriman793@gmail.com",
-                            href: "mailto:sriman793@gmail.com",
-                            icon: "✉️",
-                        },
-                        {
-                            label: "LinkedIn",
-                            value: "sriman-narayana-yendluri",
-                            href: "https://linkedin.com/in/sriman-narayana-yendluri-14b34022a",
-                            icon: "🔗",
-                        },
-                        {
-                            label: "Phone",
-                            value: "+91 74168 99743",
-                            href: "tel:+917416899743",
-                            icon: "📞",
-                        },
-                    ].map((c) => (
-                        <a
-                            key={c.label}
-                            href={c.href}
-                            target={c.label === "LinkedIn" ? "_blank" : undefined}
-                            className="card-glow group flex items-start gap-3 rounded-2xl border border-[var(--border)] bg-[var(--surface-2)] p-4 transition-all hover:border-[var(--accent)]/30"
+                <div style={{
+                    marginTop: "16px", paddingTop: "16px",
+                    borderTop: "1px solid #e5e7eb",
+                    display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: "8px",
+                }}>
+                    {contacts.map(({ label, value, href, Icon }) => (
+                        <a key={label} href={href}
+                            target={label === "LinkedIn" ? "_blank" : undefined}
+                            style={{
+                                display: "flex", alignItems: "flex-start", gap: "8px",
+                                border: "1px solid #e5e7eb", borderRadius: "7px",
+                                backgroundColor: "#ffffff", padding: "10px 12px",
+                                textDecoration: "none",
+                            }}
                         >
-                            <span className="mt-0.5 text-lg">{c.icon}</span>
+                            <Icon size={13} color="#1d4ed8" style={{ marginTop: "1px", flexShrink: 0 }} />
                             <div>
-                                <p className="text-[10px] uppercase tracking-widest text-[var(--muted)]">{c.label}</p>
-                                <p className="mt-0.5 text-sm font-medium text-white group-hover:text-[var(--accent)] transition-colors">
-                                    {c.value}
-                                </p>
+                                <p style={{ fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.07em", color: "#9ca3af", margin: 0 }}>{label}</p>
+                                <p style={{ fontSize: "11px", fontWeight: 500, color: "#111827", margin: "2px 0 0" }}>{value}</p>
                             </div>
                         </a>
                     ))}
