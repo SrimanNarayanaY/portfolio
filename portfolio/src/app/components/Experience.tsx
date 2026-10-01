@@ -15,11 +15,12 @@ const jobs = [
         ],
     },
     {
-        role: "Backend Developer",
+        role: "Software Engineer",
         company: "Orotron Software Pvt Ltd",
         period: "Oct 2022 – Jul 2025",
         badge: "3 yrs",
         bullets: [
+            "Engineered automated meeting recording pipeline & Google Meet integration for real-time video/audio capture, cloud media processing, and automated storage.",
             "Built RESTful APIs and microservices in Node.js, Express.js, NestJS, and Hono.js for recruitment, legal, and ship-tracking domains.",
             "Designed MongoDB and Drizzle ORM schemas; handled migrations and query optimisation for production workloads.",
             "Integrated Stripe payments, SendGrid/SMTP email, and AWS S3 file storage.",
@@ -29,7 +30,7 @@ const jobs = [
 ];
 
 const achievements = [
-    "Top-Rated Backend Developer on GitHub",
+    "Top-Rated Software Engineer on GitHub",
     "Optimised database performance — up to 50% faster response",
     "Recognised for open source contributions and API design",
 ];

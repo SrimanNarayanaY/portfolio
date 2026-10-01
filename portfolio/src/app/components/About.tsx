@@ -1,4 +1,4 @@
-import { Settings, Cloud, Shield, Zap, Users } from "lucide-react";
+import { Settings, Cloud, Shield, Zap, Users, Video } from "lucide-react";
 
 const stats = [
     { label: "Experience", value: "3+ years" },
@@ -7,10 +7,11 @@ const stats = [
 ];
 
 const highlights = [
-    { Icon: Settings, title: "API & Database Specialist", desc: "Scalable REST APIs with optimised DB schemas and query tuning." },
+    { Icon: Settings, title: "API & Full-Stack Systems", desc: "Scalable REST APIs, NestJS monorepos, and Next.js platforms." },
+    { Icon: Video, title: "Meeting & Media Automation", desc: "Automated Google Meet recording bots & WebRTC cloud capture." },
     { Icon: Cloud, title: "Cloud-Native & DevOps", desc: "AWS S3/EC2, Utho VPS, GitHub Actions CI/CD, rclone backup." },
-    { Icon: Shield, title: "Security-Focused", desc: "JWT, OAuth, RBAC, and encryption in all production apps." },
-    { Icon: Zap, title: "Payment & Real-Time", desc: "Stripe, Socket.IO live events, SendGrid/SMTP notifications." },
+    { Icon: Shield, title: "Security-Focused", desc: "JWT, OAuth, RBAC, Supabase RLS, and encryption in production apps." },
+    { Icon: Zap, title: "Real-Time & Payments", desc: "Stripe, Socket.IO live events, SendGrid/SMTP notifications." },
     { Icon: Users, title: "Agile Collaborator", desc: "PR reviews, Bitbucket branch protection, Scrum delivery." },
 ];
 
@@ -44,7 +45,7 @@ export default function About() {
                 {/* Right */}
                 <div className="flex-1 flex flex-col gap-3.5 min-w-0">
                     <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
-                        Backend developer with 3+ years architecting RESTful APIs, microservices, and cloud-native infrastructure. Proficient in Node.js, NestJS (NX monorepos), Hono.js, and Django.
+                        Software engineer with 3+ years architecting scalable RESTful APIs, distributed microservices, and modern full-stack web applications. Proficient in Node.js, NestJS (NX monorepos), Next.js, and cloud-native infrastructure.
                     </p>
                     <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
                         Database expertise: PostgreSQL, MySQL, MongoDB, TypeORM, Drizzle ORM. Cloud: AWS S3/EC2, Utho VPS, Render, GitHub Actions CI/CD.

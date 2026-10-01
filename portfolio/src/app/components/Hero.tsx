@@ -1,16 +1,16 @@
 import { MapPin, Mail, Link2 } from "lucide-react";
 
 const snapshot = [
-    { label: "Stack", val: "Node.js · NestJS · TypeScript" },
+    { label: "Core", val: "Node.js · NestJS · TypeScript" },
+    { label: "Full-Stack", val: "Next.js · React · Supabase" },
     { label: "Cloud", val: "AWS · Utho VPS · CI/CD" },
-    { label: "DB", val: "PostgreSQL · MySQL · MongoDB" },
-    { label: "Focus", val: "Monorepos · Security · Backup" },
+    { label: "DB", val: "PostgreSQL · MongoDB · MySQL" },
 ];
 
 const stats = [
     { val: "3+", label: "Yrs Exp" },
     { val: "40%", label: "API Gain" },
-    { val: "6+", label: "Projects" },
+    { val: "7+", label: "Projects" },
     { val: "2", label: "Companies" },
 ];
 
@@ -25,20 +25,25 @@ export default function Hero() {
 
                 {/* Headline */}
                 <div>
-                    <p className="text-xs text-gray-400 font-semibold uppercase tracking-wider mb-1.5">
-                        Backend Developer
-                    </p>
+                    <div className="flex items-center gap-2 mb-1.5">
+                        <span className="text-xs font-semibold uppercase tracking-wider text-blue-700 bg-blue-50 border border-blue-200 rounded px-2 py-0.5">
+                            Software Engineer
+                        </span>
+                        <span className="text-xs text-gray-500 font-medium">
+                            Backend &amp; Full-Stack
+                        </span>
+                    </div>
                     <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-1 leading-tight">
                         Sriman Narayana<br />Yendluri
                     </h1>
                     <p className="text-xs sm:text-sm text-gray-500 mt-2">
-                        Node.js · NestJS · TypeScript · AWS · CI/CD
+                        Node.js · NestJS · Next.js · TypeScript · AWS · PostgreSQL
                     </p>
                 </div>
 
                 {/* Summary */}
                 <p className="text-xs sm:text-sm text-gray-700 leading-relaxed border-l-2 sm:border-l-[3px] border-blue-700 pl-3 max-w-xl">
-                    3+ years designing scalable APIs, optimising databases, and deploying secure microservices on AWS and Utho VPS using NX monorepo architecture.
+                    3+ years architecting scalable backend APIs, distributed microservices, and modern full-stack web applications on AWS and Utho VPS using NX monorepo architecture.
                 </p>
 
                 {/* CTAs */}
@@ -79,7 +84,7 @@ export default function Hero() {
             <div className="w-full lg:w-[300px] flex-shrink-0">
                 <div className="border border-gray-200 rounded-xl bg-white p-4 shadow-sm">
                     <div className="flex items-center justify-between mb-3">
-                        <p className="text-xs font-semibold text-gray-900">Backend Snapshot</p>
+                        <p className="text-xs font-semibold text-gray-900">Engineering Snapshot</p>
                         <span className="inline-flex items-center gap-1 border border-green-200 bg-green-50 rounded-full px-2 py-0.5 text-[10px] font-medium text-green-700">
                             <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
                             Available
@@ -96,7 +101,7 @@ export default function Hero() {
                     </div>
 
                     <div className="flex flex-wrap gap-1.5">
-                        {["NestJS", "NX Monorepo", "TypeORM", "GitHub Actions", "AWS EC2", "rclone"].map((t) => (
+                        {["NestJS", "Next.js", "Google Meet API", "NX Monorepo", "TypeORM", "AWS EC2"].map((t) => (
                             <span
                                 key={t}
                                 className="border border-blue-200 bg-blue-50 rounded px-2 py-0.5 text-[10px] font-medium text-blue-800"

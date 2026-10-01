@@ -1,17 +1,24 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 
 const links = ["About", "Skills", "Experience", "Projects", "Contact"];
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
+    const [isDark, setIsDark] = useState(false);
 
     useEffect(() => {
         const onScroll = () => setScrolled(window.scrollY > 30);
         window.addEventListener("scroll", onScroll);
         return () => window.removeEventListener("scroll", onScroll);
+    }, []);
+
+    // Sync theme on initial load
+    useEffect(() => {
+        const isDarkMode = document.documentElement.classList.contains("dark");
+        setIsDark(isDarkMode);
     }, []);
 
     // Auto-close mobile drawer when window resized to desktop
@@ -22,6 +29,18 @@ export default function Navbar() {
         window.addEventListener("resize", onResize);
         return () => window.removeEventListener("resize", onResize);
     }, []);
+
+    const toggleTheme = () => {
+        const nextDark = !isDark;
+        setIsDark(nextDark);
+        if (nextDark) {
+            document.documentElement.classList.add("dark");
+            localStorage.setItem("theme", "dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+            localStorage.setItem("theme", "light");
+        }
+    };
 
     const handleLinkClick = () => {
         setMobileOpen(false);
@@ -56,8 +75,17 @@ export default function Navbar() {
                     ))}
                 </div>
 
-                {/* Desktop CTA */}
-                <div className="hidden md:block">
+                {/* Desktop Actions: Theme Toggle + CTA */}
+                <div className="hidden md:flex items-center gap-2">
+                    <button
+                        type="button"
+                        onClick={toggleTheme}
+                        aria-label={isDark ? "Switch to Light mode" : "Switch to Dark mode"}
+                        className="p-2 rounded-md border border-gray-200 hover:border-gray-300 text-gray-600 hover:text-gray-900 transition-colors cursor-pointer flex items-center justify-center"
+                        title={isDark ? "Switch to Light mode" : "Switch to Dark mode"}
+                    >
+                        {isDark ? <Sun size={15} className="text-amber-400" /> : <Moon size={15} />}
+                    </button>
                     <a
                         href="mailto:sriman793@gmail.com"
                         className="bg-blue-700 hover:bg-blue-800 text-white rounded-md px-4 py-2 text-xs font-semibold transition-colors"
@@ -66,16 +94,27 @@ export default function Navbar() {
                     </a>
                 </div>
 
-                {/* Mobile Hamburger Toggle Button */}
-                <button
-                    type="button"
-                    onClick={() => setMobileOpen((prev) => !prev)}
-                    className="md:hidden p-2 -mr-2 text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 cursor-pointer"
-                    aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
-                    aria-expanded={mobileOpen}
-                >
-                    {mobileOpen ? <X size={20} /> : <Menu size={20} />}
-                </button>
+                {/* Mobile Right Controls: Theme Toggle + Hamburger */}
+                <div className="flex items-center gap-1.5 md:hidden">
+                    <button
+                        type="button"
+                        onClick={toggleTheme}
+                        aria-label={isDark ? "Switch to Light mode" : "Switch to Dark mode"}
+                        className="p-1.5 rounded-md border border-gray-200 text-gray-600 hover:text-gray-900 transition-colors cursor-pointer flex items-center justify-center"
+                        title={isDark ? "Switch to Light mode" : "Switch to Dark mode"}
+                    >
+                        {isDark ? <Sun size={16} className="text-amber-400" /> : <Moon size={16} />}
+                    </button>
+                    <button
+                        type="button"
+                        onClick={() => setMobileOpen((prev) => !prev)}
+                        className="p-2 -mr-2 text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 cursor-pointer"
+                        aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
+                        aria-expanded={mobileOpen}
+                    >
+                        {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+                    </button>
+                </div>
             </nav>
 
             {/* Mobile Navigation Drawer */}

@@ -1,14 +1,14 @@
-"use client";
-import { Code, Layers, Database, Cloud, Server, Wrench, BookOpen } from "lucide-react";
+import { Code, Layers, Database, Cloud, Server, Wrench, BookOpen, Video } from "lucide-react";
 
 const skillBlocks = [
-    { Icon: Code,     title: "Languages",            items: ["JavaScript", "TypeScript", "Python"] },
-    { Icon: Layers,   title: "Frameworks",            items: ["Node.js", "Express.js", "NestJS (NX Monorepo)", "Hono.js", "Django"] },
-    { Icon: Database, title: "Databases",             items: ["PostgreSQL", "MySQL", "MongoDB", "TypeORM", "Drizzle ORM"] },
-    { Icon: Cloud,    title: "Cloud & DevOps",        items: ["AWS S3", "AWS EC2", "GitHub Actions CI/CD", "Automated Pipelines"] },
-    { Icon: Server,   title: "Server & Infra",        items: ["Utho Cloud VPS", "Render", "SSH / Hardening", "Backup (rclone)"] },
-    { Icon: Wrench,   title: "Tools",                 items: ["Git", "GitHub", "Bitbucket", "Postman", "rclone"] },
-    { Icon: BookOpen, title: "Concepts",              items: ["REST API Design", "Microservices", "Performance Optimisation", "JWT · OAuth · RBAC", "Payment Gateways", "Socket.IO", "Agile / Scrum"] },
+    { Icon: Code,     title: "Languages",             items: ["JavaScript", "TypeScript", "Python"] },
+    { Icon: Layers,   title: "Frameworks & Full-Stack", items: ["Node.js", "Express.js", "NestJS (NX Monorepo)", "Next.js 16", "React 19", "Hono.js"] },
+    { Icon: Video,    title: "Meeting & Media Automation", items: ["Google Meet Integration", "Automated Meeting Recording", "WebRTC / Media Stream", "Headless Bot Automation"] },
+    { Icon: Database, title: "Databases & Storage",   items: ["PostgreSQL", "MySQL", "MongoDB", "TypeORM", "Drizzle ORM", "Supabase", "Cloudinary"] },
+    { Icon: Cloud,    title: "Cloud & DevOps",         items: ["AWS S3", "AWS EC2", "GitHub Actions CI/CD", "Automated Pipelines"] },
+    { Icon: Server,   title: "Server & Infra",         items: ["Utho Cloud VPS", "Render", "SSH / Hardening", "Backup (rclone)"] },
+    { Icon: Wrench,   title: "Tools & Integrations",   items: ["Google Workspace API", "Stripe", "Postman", "Git / GitHub", "Bitbucket"] },
+    { Icon: BookOpen, title: "Architecture & Systems", items: ["REST API Design", "Microservices", "Session Recording", "JWT · OAuth · RBAC", "Socket.IO Realtime"] },
 ];
 
 export default function Skills() {

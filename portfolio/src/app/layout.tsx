@@ -2,9 +2,9 @@ import "./globals.css";
 import type { Viewport } from "next";
 
 export const metadata = {
-  title: "Sriman Narayana Yendluri | Backend Developer",
+  title: "Sriman Narayana Yendluri | Software Engineer",
   description:
-    "Portfolio of Sriman Narayana Yendluri, Backend Developer specializing in Node.js, NestJS (NX monorepo), TypeORM, PostgreSQL, MongoDB, AWS, Utho Cloud VPS, and CI/CD.",
+    "Portfolio of Sriman Narayana Yendluri, Software Engineer specializing in scalable backend systems, full-stack web applications, Node.js, NestJS (NX monorepo), Next.js, PostgreSQL, and AWS cloud architecture.",
 };
 
 export const viewport: Viewport = {
@@ -19,8 +19,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth" style={{ colorScheme: "light", backgroundColor: "#ffffff" }}>
-      <body style={{ backgroundColor: "#ffffff", color: "#111827" }} className="min-h-screen overflow-x-hidden antialiased">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                const saved = localStorage.getItem('theme');
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (saved === 'dark' || (!saved && prefersDark)) {
+                  document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                }
+              } catch (e) {}
+            `,
+          }}
+        />
+      </head>
+      <body className="min-h-screen overflow-x-hidden antialiased bg-white text-gray-900 transition-colors duration-200">
         {children}
       </body>
     </html>
