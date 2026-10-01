@@ -16,113 +16,91 @@ const stats = [
 
 export default function Hero() {
     return (
-        <section id="top" style={{
-            display: "flex", alignItems: "center", justifyContent: "space-between",
-            gap: "40px", padding: "48px 0 40px",
-            backgroundColor: "#ffffff",
-            flexWrap: "wrap",
-        }}>
+        <section
+            id="top"
+            className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 sm:gap-10 py-8 sm:py-12 bg-white"
+        >
             {/* ── Left ─────────────────── */}
-            <div style={{ flex: "1 1 340px", display: "flex", flexDirection: "column", gap: "16px", minWidth: 0 }}>
+            <div className="flex-1 w-full flex flex-col gap-4 min-w-0">
 
                 {/* Headline */}
                 <div>
-                    <p style={{ fontSize: "12px", color: "#9ca3af", margin: "0 0 6px", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+                    <p className="text-xs text-gray-400 font-semibold uppercase tracking-wider mb-1.5">
                         Backend Developer
                     </p>
-                    <h1 style={{ fontSize: "clamp(26px, 4vw, 38px)", fontWeight: 700, color: "#111827", margin: "0 0 4px", lineHeight: 1.15 }}>
+                    <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-1 leading-tight">
                         Sriman Narayana<br />Yendluri
                     </h1>
-                    <p style={{ fontSize: "13px", color: "#6b7280", margin: "8px 0 0" }}>
+                    <p className="text-xs sm:text-sm text-gray-500 mt-2">
                         Node.js · NestJS · TypeScript · AWS · CI/CD
                     </p>
                 </div>
 
                 {/* Summary */}
-                <p style={{
-                    fontSize: "13px", color: "#374151", lineHeight: 1.7,
-                    borderLeft: "3px solid #1d4ed8", paddingLeft: "12px", margin: 0,
-                    maxWidth: "420px",
-                }}>
+                <p className="text-xs sm:text-sm text-gray-700 leading-relaxed border-l-2 sm:border-l-[3px] border-blue-700 pl-3 max-w-xl">
                     3+ years designing scalable APIs, optimising databases, and deploying secure microservices on AWS and Utho VPS using NX monorepo architecture.
                 </p>
 
                 {/* CTAs */}
-                <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "8px" }}>
-                    <a href="mailto:sriman793@gmail.com" id="hero-contact-btn" style={{
-                        display: "inline-flex", alignItems: "center", gap: "5px",
-                        backgroundColor: "#1d4ed8", color: "#fff",
-                        borderRadius: "6px", padding: "8px 16px",
-                        fontSize: "12px", fontWeight: 600, textDecoration: "none",
-                    }}>
-                        <Mail size={12} /> Contact Me
+                <div className="flex flex-wrap items-center gap-2.5 pt-1">
+                    <a
+                        href="mailto:sriman793@gmail.com"
+                        id="hero-contact-btn"
+                        className="inline-flex items-center justify-center gap-1.5 bg-blue-700 hover:bg-blue-800 text-white rounded-md px-4 py-2 text-xs font-semibold transition-colors"
+                    >
+                        <Mail size={13} /> Contact Me
                     </a>
-                    <a href="https://linkedin.com/in/sriman-narayana-yendluri-14b34022a" target="_blank" id="hero-linkedin-btn" style={{
-                        display: "inline-flex", alignItems: "center", gap: "5px",
-                        border: "1px solid #e5e7eb", backgroundColor: "#fff", color: "#374151",
-                        borderRadius: "6px", padding: "8px 16px",
-                        fontSize: "12px", fontWeight: 500, textDecoration: "none",
-                    }}>
-                        <Link2 size={12} /> LinkedIn
+                    <a
+                        href="https://linkedin.com/in/sriman-narayana-yendluri-14b34022a"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        id="hero-linkedin-btn"
+                        className="inline-flex items-center justify-center gap-1.5 border border-gray-200 hover:border-gray-300 bg-white text-gray-700 rounded-md px-4 py-2 text-xs font-medium transition-colors"
+                    >
+                        <Link2 size={13} /> LinkedIn
                     </a>
-                    <span style={{ display: "flex", alignItems: "center", gap: "3px", fontSize: "11px", color: "#9ca3af" }}>
-                        <MapPin size={11} /> India · +91 74168 99743
+                    <span className="flex items-center gap-1 text-xs text-gray-400 w-full sm:w-auto mt-1 sm:mt-0">
+                        <MapPin size={12} /> India · +91 74168 99743
                     </span>
                 </div>
 
                 {/* Stats */}
-                <div style={{
-                    display: "flex", gap: "24px",
-                    paddingTop: "14px", borderTop: "1px solid #e5e7eb",
-                }}>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-gray-200 mt-2">
                     {stats.map((s) => (
                         <div key={s.label}>
-                            <p style={{ fontSize: "17px", fontWeight: 700, color: "#111827", margin: 0 }}>{s.val}</p>
-                            <p style={{ fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.05em", color: "#9ca3af", margin: 0 }}>{s.label}</p>
+                            <p className="text-base sm:text-lg font-bold text-gray-900">{s.val}</p>
+                            <p className="text-[10px] uppercase tracking-wider text-gray-400">{s.label}</p>
                         </div>
                     ))}
                 </div>
             </div>
 
             {/* ── Right: Snapshot card ─────── */}
-            <div style={{ flex: "0 0 290px", maxWidth: "290px" }}>
-                <div style={{
-                    border: "1px solid #e5e7eb", borderRadius: "10px",
-                    backgroundColor: "#ffffff", padding: "16px",
-                    boxShadow: "0 1px 6px rgba(0,0,0,0.05)",
-                }}>
-                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "12px" }}>
-                        <p style={{ fontSize: "12px", fontWeight: 600, color: "#111827", margin: 0 }}>Backend Snapshot</p>
-                        <span style={{
-                            display: "inline-flex", alignItems: "center", gap: "4px",
-                            border: "1px solid #bbf7d0", backgroundColor: "#f0fdf4",
-                            borderRadius: "99px", padding: "2px 8px",
-                            fontSize: "10px", fontWeight: 500, color: "#16a34a",
-                        }}>
-                            <span style={{ width: "5px", height: "5px", borderRadius: "50%", backgroundColor: "#22c55e" }} />
+            <div className="w-full lg:w-[300px] flex-shrink-0">
+                <div className="border border-gray-200 rounded-xl bg-white p-4 shadow-sm">
+                    <div className="flex items-center justify-between mb-3">
+                        <p className="text-xs font-semibold text-gray-900">Backend Snapshot</p>
+                        <span className="inline-flex items-center gap-1 border border-green-200 bg-green-50 rounded-full px-2 py-0.5 text-[10px] font-medium text-green-700">
+                            <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
                             Available
                         </span>
                     </div>
 
-                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6px", marginBottom: "10px" }}>
+                    <div className="grid grid-cols-2 gap-2 mb-3">
                         {snapshot.map((item) => (
-                            <div key={item.label} style={{
-                                border: "1px solid #e5e7eb", borderRadius: "6px",
-                                backgroundColor: "#f9fafb", padding: "8px",
-                            }}>
-                                <p style={{ fontSize: "9px", textTransform: "uppercase", letterSpacing: "0.06em", color: "#9ca3af", margin: 0 }}>{item.label}</p>
-                                <p style={{ fontSize: "10px", fontWeight: 600, color: "#111827", margin: "3px 0 0", lineHeight: 1.35 }}>{item.val}</p>
+                            <div key={item.label} className="border border-gray-200 rounded-md bg-gray-50 p-2">
+                                <p className="text-[9px] uppercase tracking-wider text-gray-400">{item.label}</p>
+                                <p className="text-[10px] font-semibold text-gray-900 mt-1 leading-snug">{item.val}</p>
                             </div>
                         ))}
                     </div>
 
-                    <div style={{ display: "flex", flexWrap: "wrap", gap: "5px" }}>
+                    <div className="flex flex-wrap gap-1.5">
                         {["NestJS", "NX Monorepo", "TypeORM", "GitHub Actions", "AWS EC2", "rclone"].map((t) => (
-                            <span key={t} style={{
-                                border: "1px solid #bfdbfe", backgroundColor: "#eff6ff",
-                                borderRadius: "4px", padding: "2px 7px",
-                                fontSize: "10px", fontWeight: 500, color: "#1e40af",
-                            }}>
+                            <span
+                                key={t}
+                                className="border border-blue-200 bg-blue-50 rounded px-2 py-0.5 text-[10px] font-medium text-blue-800"
+                            >
                                 {t}
                             </span>
                         ))}

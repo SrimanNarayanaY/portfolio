@@ -36,72 +36,67 @@ const achievements = [
 
 export default function Experience() {
     return (
-        <section id="experience" style={{ padding: "36px 0", borderTop: "1px solid #e5e7eb", backgroundColor: "#ffffff" }}>
-            <div style={{ marginBottom: "16px" }}>
-                <span style={{
-                    display: "inline-block", fontSize: "10px", fontWeight: 600,
-                    textTransform: "uppercase", letterSpacing: "0.07em",
-                    border: "1px solid #e5e7eb", borderRadius: "4px",
-                    padding: "2px 9px", color: "#6b7280", backgroundColor: "#f3f4f6",
-                }}>Timeline</span>
-                <h2 style={{ marginTop: "6px", fontSize: "18px", fontWeight: 700, color: "#111827" }}>Work Experience</h2>
+        <section id="experience" className="py-8 sm:py-10 border-t border-gray-200 bg-white">
+            <div className="mb-4">
+                <span className="inline-block text-[10px] font-semibold uppercase tracking-wider border border-gray-200 rounded px-2 py-0.5 text-gray-500 bg-gray-100">
+                    Timeline
+                </span>
+                <h2 className="mt-1.5 text-lg font-bold text-gray-900">Work Experience</h2>
             </div>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+            <div className="flex flex-col gap-3">
                 {jobs.map((job) => (
-                    <div key={job.company} style={{
-                        border: "1px solid #e5e7eb", borderRadius: "8px",
-                        backgroundColor: "#ffffff", padding: "16px",
-                    }}>
-                        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: "6px", marginBottom: "10px" }}>
-                            <div style={{ display: "flex", alignItems: "flex-start", gap: "8px" }}>
-                                <Briefcase size={14} color="#1d4ed8" style={{ marginTop: "2px", flexShrink: 0 }} />
+                    <div
+                        key={job.company}
+                        className="border border-gray-200 rounded-lg bg-white p-4 sm:p-5"
+                    >
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5 sm:gap-2 mb-3">
+                            <div className="flex items-start gap-2.5">
+                                <Briefcase size={14} className="text-blue-700 mt-1 flex-shrink-0" />
                                 <div>
-                                    <div style={{ display: "flex", alignItems: "center", gap: "7px" }}>
-                                        <h3 style={{ fontSize: "13px", fontWeight: 600, color: "#111827", margin: 0 }}>{job.role}</h3>
-                                        <span style={{
-                                            fontSize: "9px", fontWeight: 600, textTransform: "uppercase",
-                                            border: "1px solid #bfdbfe", backgroundColor: "#eff6ff",
-                                            color: "#1e40af", borderRadius: "4px", padding: "1px 5px",
-                                        }}>{job.badge}</span>
+                                    <div className="flex flex-wrap items-center gap-2">
+                                        <h3 className="text-xs sm:text-sm font-semibold text-gray-900">{job.role}</h3>
+                                        <span className="text-[9px] font-semibold uppercase tracking-wider border border-blue-200 bg-blue-50 text-blue-800 rounded px-1.5 py-0.5">
+                                            {job.badge}
+                                        </span>
                                     </div>
-                                    <p style={{ fontSize: "11px", fontWeight: 500, color: "#1d4ed8", margin: "2px 0 0" }}>{job.company}</p>
+                                    <p className="text-xs font-medium text-blue-700 mt-0.5">{job.company}</p>
                                 </div>
                             </div>
-                            <span style={{ fontSize: "11px", color: "#9ca3af" }}>{job.period}</span>
+                            <span className="text-xs text-gray-400 pl-6 sm:pl-0">{job.period}</span>
                         </div>
 
-                        <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: "6px" }}>
+                        <ul className="flex flex-col gap-2 mt-2">
                             {job.bullets.map((b) => (
-                                <li key={b} style={{ display: "flex", alignItems: "flex-start", gap: "7px" }}>
-                                    <CheckCircle2 size={11} color="#9ca3af" style={{ marginTop: "2px", flexShrink: 0 }} />
-                                    <span style={{ fontSize: "12px", color: "#374151", lineHeight: 1.55 }}>{b}</span>
+                                <li key={b} className="flex items-start gap-2">
+                                    <CheckCircle2 size={12} className="text-gray-400 mt-1 flex-shrink-0" />
+                                    <span className="text-xs text-gray-700 leading-relaxed">{b}</span>
                                 </li>
                             ))}
                         </ul>
                     </div>
                 ))}
 
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "10px" }}>
-                    <div style={{ border: "1px solid #e5e7eb", borderRadius: "8px", backgroundColor: "#ffffff", padding: "14px" }}>
-                        <div style={{ display: "flex", alignItems: "center", gap: "7px", marginBottom: "8px" }}>
-                            <GraduationCap size={14} color="#1d4ed8" />
-                            <h3 style={{ fontSize: "12px", fontWeight: 600, color: "#111827", margin: 0 }}>Education</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-1">
+                    <div className="border border-gray-200 rounded-lg bg-white p-4">
+                        <div className="flex items-center gap-2 mb-2">
+                            <GraduationCap size={15} className="text-blue-700 flex-shrink-0" />
+                            <h3 className="text-xs font-semibold text-gray-900">Education</h3>
                         </div>
-                        <p style={{ fontSize: "12px", fontWeight: 500, color: "#111827", margin: 0 }}>B.Tech – Electronics &amp; Communication Engineering</p>
-                        <p style={{ fontSize: "11px", color: "#6b7280", margin: "3px 0 0" }}>Narayana Engineering College, Nellore · 2022</p>
+                        <p className="text-xs font-medium text-gray-900">B.Tech – Electronics &amp; Communication Engineering</p>
+                        <p className="text-[11px] text-gray-500 mt-1">Narayana Engineering College, Nellore · 2022</p>
                     </div>
 
-                    <div style={{ border: "1px solid #e5e7eb", borderRadius: "8px", backgroundColor: "#ffffff", padding: "14px" }}>
-                        <div style={{ display: "flex", alignItems: "center", gap: "7px", marginBottom: "8px" }}>
-                            <Award size={14} color="#1d4ed8" />
-                            <h3 style={{ fontSize: "12px", fontWeight: 600, color: "#111827", margin: 0 }}>Achievements</h3>
+                    <div className="border border-gray-200 rounded-lg bg-white p-4">
+                        <div className="flex items-center gap-2 mb-2">
+                            <Award size={15} className="text-blue-700 flex-shrink-0" />
+                            <h3 className="text-xs font-semibold text-gray-900">Achievements</h3>
                         </div>
-                        <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: "6px" }}>
+                        <ul className="flex flex-col gap-1.5">
                             {achievements.map((a) => (
-                                <li key={a} style={{ display: "flex", alignItems: "flex-start", gap: "6px" }}>
-                                    <CheckCircle2 size={11} color="#9ca3af" style={{ marginTop: "2px", flexShrink: 0 }} />
-                                    <span style={{ fontSize: "11px", color: "#374151" }}>{a}</span>
+                                <li key={a} className="flex items-start gap-2">
+                                    <CheckCircle2 size={12} className="text-gray-400 mt-0.5 flex-shrink-0" />
+                                    <span className="text-[11px] text-gray-700">{a}</span>
                                 </li>
                             ))}
                         </ul>

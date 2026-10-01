@@ -16,63 +16,55 @@ const highlights = [
 
 export default function About() {
     return (
-        <section id="about" style={{ padding: "36px 0", borderTop: "1px solid #e5e7eb", backgroundColor: "#ffffff" }}>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "28px" }}>
+        <section id="about" className="py-8 sm:py-10 border-t border-gray-200 bg-white">
+            <div className="flex flex-col md:flex-row gap-6 md:gap-8">
 
                 {/* Left */}
-                <div style={{ flex: "0 1 220px" }}>
-                    <span style={{
-                        display: "inline-block", fontSize: "10px", fontWeight: 600,
-                        textTransform: "uppercase", letterSpacing: "0.07em",
-                        border: "1px solid #e5e7eb", borderRadius: "4px",
-                        padding: "2px 9px", color: "#6b7280", backgroundColor: "#f3f4f6",
-                    }}>About</span>
-                    <h2 style={{ marginTop: "8px", fontSize: "18px", fontWeight: 700, color: "#111827" }}>
+                <div className="w-full md:w-[240px] flex-shrink-0">
+                    <span className="inline-block text-[10px] font-semibold uppercase tracking-wider border border-gray-200 rounded px-2 py-0.5 text-gray-500 bg-gray-100">
+                        About
+                    </span>
+                    <h2 className="mt-2 text-lg font-bold text-gray-900 leading-snug">
                         Backend systems built to scale.
                     </h2>
 
-                    <div style={{ marginTop: "12px", display: "flex", flexDirection: "column", gap: "6px" }}>
+                    <div className="mt-3 flex flex-col gap-1.5">
                         {stats.map((item) => (
-                            <div key={item.label} style={{
-                                display: "flex", justifyContent: "space-between",
-                                border: "1px solid #e5e7eb", borderRadius: "6px",
-                                backgroundColor: "#ffffff", padding: "8px 12px",
-                            }}>
-                                <p style={{ fontSize: "11px", color: "#6b7280", margin: 0 }}>{item.label}</p>
-                                <p style={{ fontSize: "11px", fontWeight: 600, color: "#111827", margin: 0 }}>{item.value}</p>
+                            <div
+                                key={item.label}
+                                className="flex justify-between items-center border border-gray-200 rounded-md bg-white px-3 py-2"
+                            >
+                                <p className="text-[11px] text-gray-500">{item.label}</p>
+                                <p className="text-[11px] font-semibold text-gray-900">{item.value}</p>
                             </div>
                         ))}
                     </div>
                 </div>
 
                 {/* Right */}
-                <div style={{ flex: "1 1 320px", display: "flex", flexDirection: "column", gap: "14px" }}>
-                    <p style={{ fontSize: "13px", color: "#374151", lineHeight: 1.65, margin: 0 }}>
+                <div className="flex-1 flex flex-col gap-3.5 min-w-0">
+                    <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
                         Backend developer with 3+ years architecting RESTful APIs, microservices, and cloud-native infrastructure. Proficient in Node.js, NestJS (NX monorepos), Hono.js, and Django.
                     </p>
-                    <p style={{ fontSize: "13px", color: "#374151", lineHeight: 1.65, margin: 0 }}>
+                    <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
                         Database expertise: PostgreSQL, MySQL, MongoDB, TypeORM, Drizzle ORM. Cloud: AWS S3/EC2, Utho VPS, Render, GitHub Actions CI/CD.
                     </p>
 
-                    <div>
-                        <h3 style={{ fontSize: "12px", fontWeight: 600, color: "#111827", margin: "0 0 10px" }}>Core Competencies</h3>
-                        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "8px" }}>
+                    <div className="mt-1">
+                        <h3 className="text-xs font-semibold text-gray-900 mb-2.5">Core Competencies</h3>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                             {highlights.map(({ Icon, title, desc }) => (
-                                <div key={title} style={{
-                                    border: "1px solid #e5e7eb", borderRadius: "8px",
-                                    backgroundColor: "#ffffff", padding: "12px",
-                                }}>
-                                    <div style={{ display: "flex", alignItems: "center", gap: "7px", marginBottom: "6px" }}>
-                                        <span style={{
-                                            display: "flex", alignItems: "center", justifyContent: "center",
-                                            width: "24px", height: "24px", borderRadius: "5px",
-                                            backgroundColor: "#eff6ff", border: "1px solid #bfdbfe", color: "#1d4ed8", flexShrink: 0,
-                                        }}>
+                                <div
+                                    key={title}
+                                    className="border border-gray-200 rounded-lg bg-white p-3 hover:border-gray-300 transition-colors"
+                                >
+                                    <div className="flex items-center gap-2 mb-1.5">
+                                        <span className="flex items-center justify-center w-6 h-6 rounded bg-blue-50 border border-blue-200 text-blue-700 flex-shrink-0">
                                             <Icon size={12} strokeWidth={2} />
                                         </span>
-                                        <h4 style={{ fontSize: "11px", fontWeight: 600, color: "#111827", margin: 0 }}>{title}</h4>
+                                        <h4 className="text-[11px] font-semibold text-gray-900 leading-tight">{title}</h4>
                                     </div>
-                                    <p style={{ fontSize: "11px", color: "#6b7280", lineHeight: 1.55, margin: 0 }}>{desc}</p>
+                                    <p className="text-[11px] text-gray-500 leading-relaxed">{desc}</p>
                                 </div>
                             ))}
                         </div>

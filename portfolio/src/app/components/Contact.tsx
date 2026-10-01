@@ -8,52 +8,42 @@ const contacts = [
 
 export default function Contact() {
     return (
-        <section id="contact" style={{ padding: "36px 0", borderTop: "1px solid #e5e7eb", backgroundColor: "#ffffff" }}>
-            <div style={{ border: "1px solid #e5e7eb", borderRadius: "10px", backgroundColor: "#ffffff", padding: "20px" }}>
-                <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "16px" }}>
+        <section id="contact" className="py-8 sm:py-10 border-t border-gray-200 bg-white">
+            <div className="border border-gray-200 rounded-xl bg-white p-5 sm:p-6 shadow-sm">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                     <div>
-                        <span style={{
-                            display: "inline-block", fontSize: "10px", fontWeight: 600,
-                            textTransform: "uppercase", letterSpacing: "0.07em",
-                            border: "1px solid #e5e7eb", borderRadius: "4px",
-                            padding: "2px 9px", color: "#6b7280", backgroundColor: "#f3f4f6",
-                        }}>Contact</span>
-                        <h2 style={{ marginTop: "8px", fontSize: "18px", fontWeight: 700, color: "#111827" }}>
-                            Let's build something resilient.
+                        <span className="inline-block text-[10px] font-semibold uppercase tracking-wider border border-gray-200 rounded px-2 py-0.5 text-gray-500 bg-gray-100">
+                            Contact
+                        </span>
+                        <h2 className="mt-2 text-lg font-bold text-gray-900 leading-snug">
+                            Let&apos;s build something resilient.
                         </h2>
-                        <p style={{ marginTop: "5px", maxWidth: "360px", fontSize: "12px", color: "#6b7280", lineHeight: 1.6 }}>
+                        <p className="mt-1 max-w-md text-xs text-gray-500 leading-relaxed">
                             Available for backend engineering roles — API design, database optimisation, and secure microservice delivery.
                         </p>
                     </div>
-                    <a href="mailto:sriman793@gmail.com" style={{
-                        display: "inline-flex", alignItems: "center", gap: "6px",
-                        backgroundColor: "#1d4ed8", color: "#ffffff",
-                        borderRadius: "6px", padding: "9px 18px",
-                        fontSize: "12px", fontWeight: 600, textDecoration: "none", flexShrink: 0,
-                    }}>
-                        <Mail size={12} /> Get in Touch
+
+                    <a
+                        href="mailto:sriman793@gmail.com"
+                        className="inline-flex items-center justify-center gap-1.5 bg-blue-700 hover:bg-blue-800 text-white rounded-md px-4 py-2.5 text-xs font-semibold transition-colors w-full sm:w-auto flex-shrink-0"
+                    >
+                        <Mail size={13} /> Get in Touch
                     </a>
                 </div>
 
-                <div style={{
-                    marginTop: "16px", paddingTop: "16px",
-                    borderTop: "1px solid #e5e7eb",
-                    display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: "8px",
-                }}>
+                <div className="mt-5 pt-4 border-t border-gray-200 grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                     {contacts.map(({ label, value, href, Icon }) => (
-                        <a key={label} href={href}
+                        <a
+                            key={label}
+                            href={href}
                             target={label === "LinkedIn" ? "_blank" : undefined}
-                            style={{
-                                display: "flex", alignItems: "flex-start", gap: "8px",
-                                border: "1px solid #e5e7eb", borderRadius: "7px",
-                                backgroundColor: "#ffffff", padding: "10px 12px",
-                                textDecoration: "none",
-                            }}
+                            rel={label === "LinkedIn" ? "noopener noreferrer" : undefined}
+                            className="flex items-start gap-2.5 border border-gray-200 hover:border-blue-300 rounded-lg bg-white p-3 text-inherit no-underline transition-colors"
                         >
-                            <Icon size={13} color="#1d4ed8" style={{ marginTop: "1px", flexShrink: 0 }} />
-                            <div>
-                                <p style={{ fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.07em", color: "#9ca3af", margin: 0 }}>{label}</p>
-                                <p style={{ fontSize: "11px", fontWeight: 500, color: "#111827", margin: "2px 0 0" }}>{value}</p>
+                            <Icon size={14} className="text-blue-700 mt-0.5 flex-shrink-0" />
+                            <div className="min-w-0">
+                                <p className="text-[10px] uppercase tracking-wider text-gray-400 font-semibold">{label}</p>
+                                <p className="text-xs font-medium text-gray-900 mt-0.5 truncate">{value}</p>
                             </div>
                         </a>
                     ))}
