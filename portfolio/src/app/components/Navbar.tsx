@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X, Sun, Moon, FileText } from "lucide-react";
 
 const links = ["About", "Skills", "Experience", "Projects", "Contact"];
 
@@ -75,7 +75,7 @@ export default function Navbar() {
                     ))}
                 </div>
 
-                {/* Desktop Actions: Theme Toggle + CTA */}
+                {/* Desktop Actions: Theme Toggle + Resume + CTA */}
                 <div className="hidden md:flex items-center gap-2">
                     <button
                         type="button"
@@ -86,6 +86,15 @@ export default function Navbar() {
                     >
                         {isDark ? <Sun size={15} className="text-amber-400" /> : <Moon size={15} />}
                     </button>
+                    <a
+                        href="/resume.pdf"
+                        download="Sriman_Narayana_Yendluri_Resume.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 border border-gray-200 hover:border-gray-300 text-gray-700 hover:text-gray-900 px-3 py-1.5 text-xs font-medium rounded-md transition-colors"
+                    >
+                        <FileText size={12} /> Resume
+                    </a>
                     <a
                         href="mailto:sriman793@gmail.com"
                         className="bg-blue-700 hover:bg-blue-800 text-white rounded-md px-4 py-2 text-xs font-semibold transition-colors"
@@ -132,7 +141,17 @@ export default function Navbar() {
                             </a>
                         ))}
                     </div>
-                    <div className="pt-2 border-t border-gray-100">
+                    <div className="pt-2 border-t border-gray-100 flex flex-col gap-2">
+                        <a
+                            href="/resume.pdf"
+                            download="Sriman_Narayana_Yendluri_Resume.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={handleLinkClick}
+                            className="w-full flex items-center justify-center gap-1.5 border border-gray-200 text-gray-700 rounded-md py-2 text-xs font-semibold hover:bg-gray-50 transition-colors"
+                        >
+                            <FileText size={13} /> Download Resume (PDF)
+                        </a>
                         <a
                             href="mailto:sriman793@gmail.com"
                             onClick={handleLinkClick}

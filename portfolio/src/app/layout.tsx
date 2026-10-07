@@ -2,9 +2,36 @@ import "./globals.css";
 import type { Viewport } from "next";
 
 export const metadata = {
-  title: "Sriman Narayana Yendluri | Software Engineer",
+  title: "Sriman Narayana Yendluri | Backend Developer",
   description:
-    "Portfolio of Sriman Narayana Yendluri, Software Engineer specializing in scalable backend systems, full-stack web applications, Node.js, NestJS (NX monorepo), Next.js, PostgreSQL, and AWS cloud architecture.",
+    "Portfolio of Sriman Narayana Yendluri, Backend Developer specializing in scalable RESTful APIs, microservices, Node.js, NestJS, TypeScript, PostgreSQL, Docker, AWS, and AI integration.",
+  keywords: [
+    "Sriman Narayana Yendluri",
+    "Backend Developer",
+    "Node.js",
+    "NestJS",
+    "TypeScript",
+    "PostgreSQL",
+    "Docker",
+    "AWS",
+    "Microservices",
+    "RAG",
+    "pgvector",
+  ],
+  authors: [{ name: "Sriman Narayana Yendluri" }],
+  openGraph: {
+    title: "Sriman Narayana Yendluri | Backend Developer",
+    description:
+      "Backend Developer with 3+ years experience building scalable APIs, distributed microservices, and AI integrations (Node.js, NestJS, AWS, PostgreSQL).",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sriman Narayana Yendluri | Backend Developer",
+    description:
+      "Backend Developer with 3+ years experience building scalable APIs, microservices, and AI integrations.",
+  },
 };
 
 export const viewport: Viewport = {
@@ -37,7 +64,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-screen overflow-x-hidden antialiased bg-white text-gray-900 transition-colors duration-200">
+      <body
+        className="min-h-screen overflow-x-hidden antialiased bg-white text-gray-900 transition-colors duration-200"
+        suppressHydrationWarning
+      >
         {children}
       </body>
     </html>

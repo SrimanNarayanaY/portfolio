@@ -1,25 +1,49 @@
-import { Settings, Cloud, Shield, Zap, Users, Video } from "lucide-react";
+import { Server, Cloud, ShieldCheck, Sparkles, CreditCard, Database } from "lucide-react";
 
 const stats = [
     { label: "Experience", value: "3+ years" },
-    { label: "API Performance", value: "Up to 40% faster" },
-    { label: "Infrastructure", value: "AWS · Utho · CI/CD" },
+    { label: "Applications Delivered", value: "8+ in Production" },
+    { label: "Performance Gain", value: "30%–50% faster" },
+    { label: "Deploy Time Reduction", value: "15 min to <3 min" },
 ];
 
 const highlights = [
-    { Icon: Settings, title: "API & Full-Stack Systems", desc: "Scalable REST APIs, NestJS monorepos, and Next.js platforms." },
-    { Icon: Video, title: "Meeting & Media Automation", desc: "Automated Google Meet recording bots & WebRTC cloud capture." },
-    { Icon: Cloud, title: "Cloud-Native & DevOps", desc: "AWS S3/EC2, Utho VPS, GitHub Actions CI/CD, rclone backup." },
-    { Icon: Shield, title: "Security-Focused", desc: "JWT, OAuth, RBAC, Supabase RLS, and encryption in production apps." },
-    { Icon: Zap, title: "Real-Time & Payments", desc: "Stripe, Socket.IO live events, SendGrid/SMTP notifications." },
-    { Icon: Users, title: "Agile Collaborator", desc: "PR reviews, Bitbucket branch protection, Scrum delivery." },
+    {
+        Icon: Server,
+        title: "REST APIs & Microservices",
+        desc: "High-throughput APIs in NestJS (NX monorepo), Express.js, and Hono.js with strict type-safety and modular architectures.",
+    },
+    {
+        Icon: Sparkles,
+        title: "AI Integration & RAG",
+        desc: "Vector search using pgvector in PostgreSQL, Hugging Face cloud inference, and multimodal generative AI pipelines.",
+    },
+    {
+        Icon: CreditCard,
+        title: "Payments & Queues",
+        desc: "Idempotent payment webhook processing for Stripe & Razorpay, BullMQ message queues, and atomic usage metering.",
+    },
+    {
+        Icon: Database,
+        title: "Databases & Optimization",
+        desc: "PostgreSQL, MySQL, MongoDB, Redis caching, query indexing, eliminating N+1 bottlenecks, and TypeORM/Drizzle migrations.",
+    },
+    {
+        Icon: Cloud,
+        title: "Cloud & DevOps",
+        desc: "AWS (EC2, S3), Azure, Docker containerization, Utho VPS, Nginx, PM2, and GitHub Actions CI/CD automation.",
+    },
+    {
+        Icon: ShieldCheck,
+        title: "Security & Code Quality",
+        desc: "JWT, OAuth, RBAC, Bitbucket branch protection standards, automated rclone multi-DB backups, and rigorous PR reviews.",
+    },
 ];
 
 export default function About() {
     return (
         <section id="about" className="py-8 sm:py-10 border-t border-gray-200 bg-white">
             <div className="flex flex-col md:flex-row gap-6 md:gap-8">
-
                 {/* Left */}
                 <div className="w-full md:w-[240px] flex-shrink-0">
                     <span className="inline-block text-[10px] font-semibold uppercase tracking-wider border border-gray-200 rounded px-2 py-0.5 text-gray-500 bg-gray-100">
@@ -45,10 +69,10 @@ export default function About() {
                 {/* Right */}
                 <div className="flex-1 flex flex-col gap-3.5 min-w-0">
                     <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
-                        Software engineer with 3+ years architecting scalable RESTful APIs, distributed microservices, and modern full-stack web applications. Proficient in Node.js, NestJS (NX monorepos), Next.js, and cloud-native infrastructure.
+                        Backend Developer with 3+ years of experience designing, building, and deploying RESTful APIs and microservices using JavaScript, TypeScript, Node.js, and NestJS on PostgreSQL, MySQL, and MongoDB. Delivered 8+ production applications across 2 companies.
                     </p>
                     <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
-                        Database expertise: PostgreSQL, MySQL, MongoDB, TypeORM, Drizzle ORM. Cloud: AWS S3/EC2, Utho VPS, Render, GitHub Actions CI/CD.
+                        Hands-on with payment gateway integration (Stripe, Razorpay), CI/CD automation (GitHub Actions), AWS (EC2, S3), Docker, Redis, and database schema design and query optimization. Experienced with RAG pipelines using pgvector and Generative AI cloud inference.
                     </p>
 
                     <div className="mt-1">

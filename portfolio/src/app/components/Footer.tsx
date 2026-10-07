@@ -6,10 +6,10 @@ export default function Footer() {
                     Sriman Narayana Yendluri
                 </span>
                 <p className="text-xs text-gray-500">
-                    Software Engineer · Node.js · NestJS · Next.js · AWS · CI/CD
+                    Backend Developer · Node.js · NestJS · TypeScript · PostgreSQL · AWS · Docker
                 </p>
-                <p className="text-[11px] text-gray-400">
-                    © {new Date().getFullYear()} Sriman Narayana Yendluri
+                <p className="text-[11px] text-gray-400" suppressHydrationWarning>
+                    © 2026 Sriman Narayana Yendluri
                 </p>
             </div>
         </footer>

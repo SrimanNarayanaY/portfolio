@@ -1,16 +1,16 @@
-import { MapPin, Mail, Link2 } from "lucide-react";
+import { MapPin, Mail, Link2, FileText } from "lucide-react";
 
 const snapshot = [
     { label: "Core", val: "Node.js · NestJS · TypeScript" },
-    { label: "Full-Stack", val: "Next.js · React · Supabase" },
-    { label: "Cloud", val: "AWS · Utho VPS · CI/CD" },
-    { label: "DB", val: "PostgreSQL · MongoDB · MySQL" },
+    { label: "AI & Search", val: "pgvector · RAG · Hugging Face" },
+    { label: "Cloud & DevOps", val: "AWS · Docker · CI/CD · VPS" },
+    { label: "Databases", val: "PostgreSQL · Redis · MongoDB" },
 ];
 
 const stats = [
     { val: "3+", label: "Yrs Exp" },
-    { val: "40%", label: "API Gain" },
-    { val: "7+", label: "Projects" },
+    { val: "8+", label: "Apps Delivered" },
+    { val: "50%", label: "Latency Drop" },
     { val: "2", label: "Companies" },
 ];
 
@@ -27,31 +27,41 @@ export default function Hero() {
                 <div>
                     <div className="flex items-center gap-2 mb-1.5">
                         <span className="text-xs font-semibold uppercase tracking-wider text-blue-700 bg-blue-50 border border-blue-200 rounded px-2 py-0.5">
-                            Software Engineer
+                            Backend Developer
                         </span>
                         <span className="text-xs text-gray-500 font-medium">
-                            Backend &amp; Full-Stack
+                            RESTful APIs &amp; Microservices
                         </span>
                     </div>
                     <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-1 leading-tight">
                         Sriman Narayana<br />Yendluri
                     </h1>
                     <p className="text-xs sm:text-sm text-gray-500 mt-2">
-                        Node.js · NestJS · Next.js · TypeScript · AWS · PostgreSQL
+                        JavaScript · TypeScript · Node.js · NestJS · PostgreSQL · AWS · Docker
                     </p>
                 </div>
 
                 {/* Summary */}
                 <p className="text-xs sm:text-sm text-gray-700 leading-relaxed border-l-2 sm:border-l-[3px] border-blue-700 pl-3 max-w-xl">
-                    3+ years architecting scalable backend APIs, distributed microservices, and modern full-stack web applications on AWS and Utho VPS using NX monorepo architecture.
+                    Backend Developer with 3+ years of experience designing, building, and deploying RESTful APIs and microservices across 8+ production applications. Hands-on with payment integrations (Stripe, Razorpay), Docker, Redis, BullMQ, AWS, and CI/CD pipelines.
                 </p>
 
                 {/* CTAs */}
                 <div className="flex flex-wrap items-center gap-2.5 pt-1">
                     <a
+                        href="/resume.pdf"
+                        download="Sriman_Narayana_Yendluri_Resume.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        id="hero-resume-btn"
+                        className="inline-flex items-center justify-center gap-1.5 bg-blue-700 hover:bg-blue-800 text-white rounded-md px-4 py-2 text-xs font-semibold transition-colors shadow-xs"
+                    >
+                        <FileText size={13} /> Download Resume (PDF)
+                    </a>
+                    <a
                         href="mailto:sriman793@gmail.com"
                         id="hero-contact-btn"
-                        className="inline-flex items-center justify-center gap-1.5 bg-blue-700 hover:bg-blue-800 text-white rounded-md px-4 py-2 text-xs font-semibold transition-colors"
+                        className="inline-flex items-center justify-center gap-1.5 border border-gray-200 hover:border-gray-300 bg-white text-gray-700 rounded-md px-4 py-2 text-xs font-medium transition-colors"
                     >
                         <Mail size={13} /> Contact Me
                     </a>
@@ -64,8 +74,8 @@ export default function Hero() {
                     >
                         <Link2 size={13} /> LinkedIn
                     </a>
-                    <span className="flex items-center gap-1 text-xs text-gray-400 w-full sm:w-auto mt-1 sm:mt-0">
-                        <MapPin size={12} /> India · +91 74168 99743
+                    <span className="flex items-center gap-1 text-xs text-gray-500 w-full sm:w-auto mt-1 sm:mt-0">
+                        <MapPin size={12} className="text-gray-400" /> Noida, India · +91 74168 99743
                     </span>
                 </div>
 
@@ -81,7 +91,7 @@ export default function Hero() {
             </div>
 
             {/* ── Right: Snapshot card ─────── */}
-            <div className="w-full lg:w-[300px] flex-shrink-0">
+            <div className="w-full lg:w-[320px] flex-shrink-0">
                 <div className="border border-gray-200 rounded-xl bg-white p-4 shadow-sm">
                     <div className="flex items-center justify-between mb-3">
                         <p className="text-xs font-semibold text-gray-900">Engineering Snapshot</p>
@@ -101,7 +111,7 @@ export default function Hero() {
                     </div>
 
                     <div className="flex flex-wrap gap-1.5">
-                        {["NestJS", "Next.js", "Google Meet API", "NX Monorepo", "TypeORM", "AWS EC2"].map((t) => (
+                        {["NestJS", "TypeScript", "PostgreSQL", "Docker", "Redis", "BullMQ", "Stripe", "AWS EC2", "pgvector", "Next.js"].map((t) => (
                             <span
                                 key={t}
                                 className="border border-blue-200 bg-blue-50 rounded px-2 py-0.5 text-[10px] font-medium text-blue-800"
